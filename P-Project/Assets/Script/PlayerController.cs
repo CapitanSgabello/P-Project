@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     public Rigidbody2D rb;
     public float speed = 30f;
     private Vector2 moveInput;
     public Joystick joystick;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
 
     private void Start()
     {
