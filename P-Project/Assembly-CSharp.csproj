@@ -63,14 +63,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GPJ FPS Assets\Scene\PlayerMovement.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
-    <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
-    <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
-    <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
-    <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
-    <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\Script\MovimentoGiocatore\Base\Joystick.cs" />
+    <Compile Include="Assets\Script\MovimentoGiocatore\Joysticks\DynamicJoystick.cs" />
+    <Compile Include="Assets\Script\MovimentoGiocatore\Joysticks\FixedJoystick.cs" />
+    <Compile Include="Assets\Script\MovimentoGiocatore\Joysticks\FloatingJoystick.cs" />
+    <Compile Include="Assets\Script\MovimentoGiocatore\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\Script\PlayerController.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -609,43 +609,58 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/stefa/Desktop/Unity/P-Project/P-Project/P-Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/stefa/Desktop/Unity/P-Project/P-Project/P-Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/stefa/Desktop/Unity/P-Project/P-Project/P-Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/stefa/Desktop/Unity/P-Project/P-Project/P-Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/stefa/Desktop/Unity/P-Project/P-Project/P-Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/stefa/Desktop/Unity/P-Project/P-Project/P-Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Notifications.iOS">
-      <HintPath>C:/Users/stefa/Desktop/Unity/P-Project/P-Project/P-Project/Library/ScriptAssemblies/Unity.Notifications.iOS.dll</HintPath>
+      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.Notifications.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/stefa/Desktop/Unity/P-Project/P-Project/P-Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Notifications.Android">
-      <HintPath>C:/Users/stefa/Desktop/Unity/P-Project/P-Project/P-Project/Library/ScriptAssemblies/Unity.Notifications.Android.dll</HintPath>
+      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.Notifications.Android.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mobile.AndroidLogcat.Editor">
-      <HintPath>C:/Users/stefa/Desktop/Unity/P-Project/P-Project/P-Project/Library/ScriptAssemblies/Unity.Mobile.AndroidLogcat.Editor.dll</HintPath>
+      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.Mobile.AndroidLogcat.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/stefa/Desktop/Unity/P-Project/P-Project/P-Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/stefa/Desktop/Unity/P-Project/P-Project/P-Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
+      <Project>{C8C73FD3-EA07-9EE8-6431-905D4D4EAAD9}</Project>
+      <Name>Unity.2D.Tilemap.Extras.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
+      <Project>{B19FB5DB-76F6-E420-FC0D-E65990AD3D21}</Project>
+      <Name>Unity.2D.Tilemap.Extras</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
