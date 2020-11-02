@@ -11,16 +11,21 @@ public class PlayerController : MonoBehaviour
 
     /*Moves var*/
     public float moveSpeed = 0f;
-    private Vector2 inputMove;
     public Joystick joystickMove;
 
     /*Visual var*/
     public float sensibility = 0f;
-    private Vector2 inputVisual;
     public Joystick joystickVisual;
     private Vector2 lookInput;
     private float cameraVertical;
+    public float minAngleVisual = -10f;
+    public float maxAngleVisual = 10f;
 
+    private void Start()
+    {
+
+        
+     }
     private void Awake()
     {
         instance = this;
@@ -36,8 +41,8 @@ public class PlayerController : MonoBehaviour
         lookInput = new Vector2(joystickVisual.Horizontal, joystickVisual.Vertical) * sensibility * Time.deltaTime;
 
         // vertical rotation
-        cameraVertical = Mathf.Clamp(cameraVertical - lookInput.y, -135f, 135f);
-        cameraTransform.localRotation = Quaternion.Euler(cameraVertical,0 ,0);
+        cameraVertical = Mathf.Clamp(lookInput.y, minAngleVisual, maxAngleVisual);
+        cameraTransform.localRotation = Quaternion.Euler(cameraTransform.localRotation.eulerAngles.x, cameraTransform.localRotation.eulerAngles.y + cameraVertical, cameraTransform.localRotation.eulerAngles.z);
 
         // horizontal rotation
         transform.Rotate(transform.forward, -lookInput.x);
@@ -45,8 +50,10 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        Vector2 movementDirection = new Vector2(joystickMove.Horizontal, joystickMove.Vertical) * moveSpeed * Time.deltaTime; 
-        characterController.Move(transform.up * -movementDirection.x + transform.right * movementDirection.y);
+        Vector2 movementDirection = new Vector2(joystickMove.Horizontal, joystickMove.Vertical)* moveSpeed* Time.deltaTime; 
+        Vector3 moveHorizontal = transform.up* -movementDirection.x;
+        Vector3 moveVertical = transform.right * movementDirection.y;
+        characterController.Move(moveHorizontal + moveVertical) ;
     }
 
 }
