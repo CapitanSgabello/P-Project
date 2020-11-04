@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: WhitebrickWall
+  m_Name: T_Carpet_Cx
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: 7487ff28e0812c7499431bf3090c69d1, type: 3}
-  m_DefaultGameObject: {fileID: 8354910869124417167, guid: df54bddbaa47fe7418c0156629d5c9a4,
+  m_DefaultSprite: {fileID: 21300000, guid: 7e7052266b6515244a8acfce02fbcfb2, type: 3}
+  m_DefaultGameObject: {fileID: 6257383490486414643, guid: df98c5ce8a4273c4c9a07803717e7b45,
     type: 3}
   m_DefaultColliderType: 1
   m_TilingRules: []
