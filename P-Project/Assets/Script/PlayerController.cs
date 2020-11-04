@@ -67,10 +67,10 @@ public class PlayerController : MonoBehaviour
 
         // vertical rotation
         cameraVertical = Mathf.Clamp(lookInput.y, minAngleVisual, maxAngleVisual);
-        cameraTransform.localRotation = Quaternion.Euler(cameraTransform.localRotation.eulerAngles.x, cameraTransform.localRotation.eulerAngles.y + cameraVertical, cameraTransform.localRotation.eulerAngles.z);
+        cameraTransform.localRotation = Quaternion.Euler(cameraTransform.localRotation.eulerAngles.x - cameraVertical, cameraTransform.localRotation.eulerAngles.y, cameraTransform.localRotation.eulerAngles.z);
 
         // horizontal rotation
-        transform.Rotate(transform.forward, -lookInput.x);
+        transform.Rotate(transform.up, lookInput.x);
     }
 
     private void Move()
