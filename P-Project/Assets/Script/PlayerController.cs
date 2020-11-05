@@ -100,4 +100,14 @@ public class PlayerController : MonoBehaviour
         onElevator = condition;
     }
 
+    public void modifySensibity()
+    {
+        sensibility += 15;
+    }
+
+    public void modifyMoveSpeed()
+    {
+        moveSpeed += 15;
+    }
+
 }
