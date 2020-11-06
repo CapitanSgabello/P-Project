@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using Microsoft.SqlServer.Server;
+using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -34,6 +37,13 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public bool onElevator;
 
+    /* Variabili e costanti per lo sparo*/
+
+    public GameObject bulletImpact;
+    public Animator gunAnim;
+    public int currentAmmo;
+    public Camera viewCam;
+
     private void Start()
     {
         gravityValue = gravity;
@@ -59,6 +69,7 @@ public class PlayerController : MonoBehaviour
 
         Move();
         LookAround();
+
     }
 
     private void LookAround()
@@ -72,6 +83,10 @@ public class PlayerController : MonoBehaviour
         // horizontal rotation
         transform.Rotate(transform.up, lookInput.x);
     }
+
+
+
+
 
     private void Move()
     {
@@ -110,4 +125,26 @@ public class PlayerController : MonoBehaviour
         moveSpeed += 15;
     }
 
+
+    //Shooting
+    public void Fire()
+    {
+        if (currentAmmo > 0)
+        {
+            Ray ray = viewCam.ViewportPointToRay(new Vector3(.5f, .5f, .0f));
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                Instantiate(bulletImpact, hit.point, transform.rotation);
+            }
+            else
+            {
+                Debug.Log("I'm looking at nothing!");
+            }
+
+
+            currentAmmo--;
+            gunAnim.SetTrigger("Shoot");
+        }
+    }
 }
