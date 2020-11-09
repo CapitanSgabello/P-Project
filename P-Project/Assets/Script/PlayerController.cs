@@ -44,10 +44,15 @@ public class PlayerController : MonoBehaviour
     public int currentAmmo;
     public Camera viewCam;
 
+    /* Variabili vita del personaggio*/
+    public int currentHealth;
+    public int maxHealth;
+
     private void Start()
     {
         gravityValue = gravity;
         elevatorSpeed = 170f;
+        currentHealth = maxHealth;
     }
     private void Awake()
     {
@@ -147,4 +152,10 @@ public class PlayerController : MonoBehaviour
             gunAnim.SetTrigger("Shoot");
         }
     }
+    /*Funzione che identifica il danno subito*/
+    public void TakeDamage(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+
+     }
 }
