@@ -8,29 +8,32 @@ using UnityEngine;
         public GameObject doorCollider;
         public float openSpeed;
         private bool shouldOpen;
-
+        private float posMax;
+        private float posMin;
+        public float elevatorMax;
 
         // Start is called before the first frame update
         void Start()
         {
-
+        posMin = doorModel.position.y;
+        posMax = posMin + elevatorMax;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (shouldOpen && (doorModel.position.y != 2f))
+            if (shouldOpen && (doorModel.position.y != posMax) )
             {
-                doorModel.position = Vector3.MoveTowards(doorModel.position, new Vector3(doorModel.position.x, 2f, doorModel.position.z), openSpeed * Time.deltaTime);
-                if (doorModel.position.y == 2f)
+                doorModel.position = Vector3.MoveTowards(doorModel.position, new Vector3(doorModel.position.x, posMax, doorModel.position.z), openSpeed * Time.deltaTime);
+                if (doorModel.position.y == posMax)
                 {
                     doorCollider.SetActive(false);
                 }
             }
-            else if (!shouldOpen && (doorModel.position.y != 1f))
+            else if (!shouldOpen && (doorModel.position.y != posMin))
             {
-                doorModel.position = Vector3.MoveTowards(doorModel.position, new Vector3(doorModel.position.x, 1f, doorModel.position.z), openSpeed * Time.deltaTime);
-                if (doorModel.position.y == 1f)
+                doorModel.position = Vector3.MoveTowards(doorModel.position, new Vector3(doorModel.position.x, posMin, doorModel.position.z), openSpeed * Time.deltaTime);
+                if (doorModel.position.y == posMin)
                 {
                     doorCollider.SetActive(true);
                 }
