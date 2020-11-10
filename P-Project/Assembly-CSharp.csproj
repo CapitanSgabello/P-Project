@@ -67,7 +67,11 @@
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Script\AscensoreScript.cs" />
     <Compile Include="Assets\Script\BillBoard.cs" />
+    <Compile Include="Assets\Script\ButtonScript.cs" />
     <Compile Include="Assets\Script\DistruzioneOggetti.cs" />
+    <Compile Include="Assets\Script\Door&amp;ButtonScript.cs" />
+    <Compile Include="Assets\Script\DoorScript.cs" />
+    <Compile Include="Assets\Script\EnemyController.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
     <Compile Include="Assets\Script\MovimentoGiocatore\Base\Joystick.cs" />
