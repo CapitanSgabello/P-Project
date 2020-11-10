@@ -13,22 +13,18 @@ public class EnemyController : MonoBehaviour
     public Animator enemyAnim;                              //animazione del nemico
 
     /* Variabili e costanti per la gravità */
-    private Vector3 playerFall;
+    private Vector3 enemyFall;
     public float gravity = -800f;
 
-    // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         enemyAnim.SetBool("Walk", false);                       //se il nemico è fermo bool walk = false e bool idle = true
         enemyAnim.SetBool("Idle", true);
-
-
 
         if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < playerRange)
         {
@@ -39,8 +35,15 @@ public class EnemyController : MonoBehaviour
             enemyAnim.SetBool("Idle", false);
             
             /*Gravità*/
-            playerFall.y = gravity * Time.deltaTime;
-            enemyController.Move(playerFall * Time.deltaTime);
+            enemyFall.y = gravity * Time.deltaTime;
+            enemyController.Move(enemyFall * Time.deltaTime);
         }
+    }
+
+    public void takeDamage()
+    {
+        health--;
+        if (health <= 0) 
+            Destroy(gameObject);
     }
 }
