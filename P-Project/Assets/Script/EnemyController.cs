@@ -12,6 +12,10 @@ public class EnemyController : MonoBehaviour
     public float speed;                                     //variabile per regolare la velocità del nemico
     public Animator enemyAnim;                              //animazione del nemico
 
+    /* Variabili e costanti per la gravità */
+    private Vector3 playerFall;
+    public float gravity = -800f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,10 @@ public class EnemyController : MonoBehaviour
 
             enemyAnim.SetBool("Walk", true);                    //se il nemico comincia a camminare walk = true e idle = false
             enemyAnim.SetBool("Idle", false);
+            
+            /*Gravità*/
+            playerFall.y = gravity * Time.deltaTime;
+            enemyController.Move(playerFall * Time.deltaTime);
         }
     }
 }

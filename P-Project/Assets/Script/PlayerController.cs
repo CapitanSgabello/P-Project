@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     /* Variabili e costanti per la gravità */
     private Vector3 playerFall;
     public float gravityValue;
-    public float gravity = 800f;
+    public float gravity = -800f;
 
     /* Variabili e costanti per gli ascensori */
     public Transform groundCheck;
