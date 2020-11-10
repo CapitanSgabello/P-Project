@@ -7,17 +7,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    /*Variabili e costanti d'istanza*/
     public static PlayerController instance;
-
     public CharacterController characterController;
-    public Transform cameraTransform;
+    public Camera viewCam;
 
-    /*Moves var*/
-    public float moveSpeed = 0f;
+    /*Variabili e costanti per il movimento*/
+    public float moveSpeed;
     public Joystick joystickMove;
 
-    /*Visual var*/
-    public float sensibility = 0f;
+    /*Variabili e costanti per la visuale*/
+    public float sensibility;
     public Joystick joystickVisual;
     private Vector2 lookInput;
     private float cameraVertical;
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     /* Variabili e costanti per la gravità */
     private Vector3 playerFall;
     public float gravityValue;
-    public float gravity = 800f;
+    public float gravity = -800f;
 
     /* Variabili e costanti per gli ascensori */
     public Transform groundCheck;
@@ -38,11 +38,9 @@ public class PlayerController : MonoBehaviour
     public bool onElevator;
 
     /* Variabili e costanti per lo sparo*/
-
     public GameObject bulletImpact;
     public Animator gunAnim;
     public int currentAmmo;
-    public Camera viewCam;
 
     private void Start()
     {
@@ -69,24 +67,23 @@ public class PlayerController : MonoBehaviour
 
         Move();
         LookAround();
-
     }
 
     private void LookAround()
     {
         lookInput = new Vector2(joystickVisual.Horizontal, joystickVisual.Vertical) * sensibility * Time.deltaTime;
 
-        // vertical rotation
+        /*Rotazione verticale*/
         cameraVertical = Mathf.Clamp(lookInput.y, minAngleVisual, maxAngleVisual);
-        cameraTransform.localRotation = Quaternion.Euler(cameraTransform.localRotation.eulerAngles.x - cameraVertical, cameraTransform.localRotation.eulerAngles.y, cameraTransform.localRotation.eulerAngles.z);
+        viewCam.transform.localRotation = Quaternion.Euler(viewCam.transform.localRotation.eulerAngles.x - cameraVertical, viewCam.transform.localRotation.eulerAngles.y, viewCam.transform.localRotation.eulerAngles.z);
 
-        // horizontal rotation
+        /*Rotazione orizzontale*/
         transform.Rotate(transform.up, lookInput.x);
     }
-
-
-
-
+    public void modifySensibity()
+    {
+        sensibility += 15;
+    }
 
     private void Move()
     {
@@ -115,18 +112,6 @@ public class PlayerController : MonoBehaviour
         onElevator = condition;
     }
 
-    public void modifySensibity()
-    {
-        sensibility += 15;
-    }
-
-    public void modifyMoveSpeed()
-    {
-        moveSpeed += 15;
-    }
-
-
-    //Shooting
     public void Fire()
     {
         if (currentAmmo > 0)
@@ -134,15 +119,7 @@ public class PlayerController : MonoBehaviour
             Ray ray = viewCam.ViewportPointToRay(new Vector3(.5f, .5f, .0f));
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
-            {
                 Instantiate(bulletImpact, hit.point, transform.rotation);
-            }
-            else
-            {
-                Debug.Log("I'm looking at nothing!");
-            }
-
-
             currentAmmo--;
             gunAnim.SetTrigger("Shoot");
         }
