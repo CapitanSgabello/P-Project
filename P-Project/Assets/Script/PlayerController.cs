@@ -1,10 +1,6 @@
-﻿using Microsoft.SqlServer.Server;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography;
 using UnityEngine;
-
 public class PlayerController : MonoBehaviour
 {
     /*Variabili e costanti d'istanza*/
