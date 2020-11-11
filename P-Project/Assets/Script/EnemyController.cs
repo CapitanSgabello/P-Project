@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public CharacterController enemyController;             //character controller del nemico
+    public GameObject player;
 
     public int health = 3;                                  //vita del nemico
     public float playerRange = 10f;
@@ -26,9 +27,9 @@ public class EnemyController : MonoBehaviour
         enemyAnim.SetBool("Walk", false);                       //se il nemico è fermo bool walk = false e bool idle = true
         enemyAnim.SetBool("Idle", true);
 
-        if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < playerRange)
+        if (Vector3.Distance(transform.position, player.transform.position) < playerRange)
         {
-            Vector3 playerDirection = PlayerController.instance.transform.position - transform.position;
+            Vector3 playerDirection = player.transform.position - transform.position;
             enemyController.Move(playerDirection * Time.deltaTime * speed);
 
             enemyAnim.SetBool("Walk", true);                    //se il nemico comincia a camminare walk = true e idle = false
@@ -38,12 +39,14 @@ public class EnemyController : MonoBehaviour
             enemyFall.y = gravity * Time.deltaTime;
             enemyController.Move(enemyFall * Time.deltaTime);
         }
+        else
+            player.GetComponent<PlayerController>().takeDamage(5);
     }
 
     public void takeDamage()
     {
         health--;
-        if (health <= 0) 
+        if (health <= 0)
             Destroy(gameObject);
     }
 }

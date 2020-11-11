@@ -1,9 +1,4 @@
-﻿using Microsoft.SqlServer.Server;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +6,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     public CharacterController characterController;
     public Camera viewCam;
+    public GameObject deadScreen;
 
     /*Variabili e costanti per il movimento*/
     public float moveSpeed;
@@ -42,10 +38,15 @@ public class PlayerController : MonoBehaviour
     public Animator gunAnim;
     public int currentAmmo;
 
+    public int currentHealth;
+    public int maxHealth = 100;
+    private bool hasDied;
+
     private void Start()
     {
         gravityValue = gravity;
         elevatorSpeed = 170f;
+        currentHealth = maxHealth;
     }
     private void Awake()
     {
@@ -56,17 +57,14 @@ public class PlayerController : MonoBehaviour
         /* Impostazioni per l'Ascensore */
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, elevatorMask);
 
-        if (isGrounded && onElevator)
-        {
-            gravityValue = elevatorSpeed;
-        }
-        else
-        {
-            gravityValue = gravity;
-        }
+        if (isGrounded && onElevator) gravityValue = elevatorSpeed;
+        else gravityValue = gravity;
 
-        Move();
-        LookAround();
+        if (!hasDied)
+        {
+            Move();
+            LookAround();
+        }
     }
 
     private void LookAround()
@@ -127,6 +125,25 @@ public class PlayerController : MonoBehaviour
               
             currentAmmo--;
             gunAnim.SetTrigger("Shoot");
+        }
+    }
+    public void takeDamage(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+
+        if (currentHealth <= 0)
+        {
+            deadScreen.SetActive(true);
+            hasDied = true;
+        }
+    }
+
+    public void addHealth(int healAmount)
+    {
+        currentHealth += healAmount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
         }
     }
 }
