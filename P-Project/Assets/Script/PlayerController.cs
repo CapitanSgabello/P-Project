@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     public CharacterController characterController;
     public Camera viewCam;
+    public GameObject deadScreen;
 
     /*Variabili e costanti per il movimento*/
     public float moveSpeed;
@@ -42,6 +43,10 @@ public class PlayerController : MonoBehaviour
     public Animator gunAnim;
     public int currentAmmo;
 
+    public int currentHealth;
+    public int maxHealth = 100;
+    private bool hasDied;
+
     public CrystalScript crystal;
 
     private void Start()
@@ -67,8 +72,11 @@ public class PlayerController : MonoBehaviour
             gravityValue = gravity;
         }
 
-        Move();
-        LookAround();
+        if (!hasDied)
+        {
+            Move();
+            LookAround();
+        }
     }
 
     private void LookAround()
@@ -128,9 +136,33 @@ public class PlayerController : MonoBehaviour
                 {
                     crystal.TakeDamage();
                 }
+                if (hit.transform.tag == "Enemy")
+                {
+                    hit.transform.GetComponent<EnemyController>().takeDamage();
+                }
             }
             currentAmmo--;
             gunAnim.SetTrigger("Shoot");
+        }
+    }
+
+    public void takeDamage(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+
+        if (currentHealth <= 0)
+        {
+            deadScreen.SetActive(true);
+            hasDied = true;
+        }
+    }
+
+    public void addHealth(int healAmount)
+    {
+        currentHealth += healAmount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
         }
     }
 }
