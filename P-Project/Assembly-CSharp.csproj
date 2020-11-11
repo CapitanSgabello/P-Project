@@ -68,9 +68,11 @@
     <Compile Include="Assets\Script\AscensoreScript.cs" />
     <Compile Include="Assets\Script\BillBoard.cs" />
     <Compile Include="Assets\Script\ButtonScript.cs" />
+    <Compile Include="Assets\Script\CrystalScript.cs" />
     <Compile Include="Assets\Script\DistruzioneOggetti.cs" />
     <Compile Include="Assets\Script\Door&amp;ButtonScript.cs" />
     <Compile Include="Assets\Script\DoorScript.cs" />
+    <Compile Include="Assets\Script\Door_With_CrystalScript.cs" />
     <Compile Include="Assets\Script\EnemyController.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
