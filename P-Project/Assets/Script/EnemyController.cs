@@ -43,4 +43,11 @@ public class EnemyController : MonoBehaviour
             enemyController.Move(playerFall * Time.deltaTime);
         }
     }
+
+    public void takeDamage()
+    {
+        health--;
+        if (health <= 0)
+            Destroy(gameObject);
+    }
 }
