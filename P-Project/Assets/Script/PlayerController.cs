@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
     public Animator gunAnim;
     public int currentAmmo;
 
+    public CrystalScript crystal;
+
     private void Start()
     {
         gravityValue = gravity;
@@ -119,7 +121,14 @@ public class PlayerController : MonoBehaviour
             Ray ray = viewCam.ViewportPointToRay(new Vector3(.5f, .5f, .0f));
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
+            {
                 Instantiate(bulletImpact, hit.point, transform.rotation);
+
+                if (hit.transform.CompareTag("Crystal"))
+                {
+                    crystal.TakeDamage();
+                }
+            }
             currentAmmo--;
             gunAnim.SetTrigger("Shoot");
         }
