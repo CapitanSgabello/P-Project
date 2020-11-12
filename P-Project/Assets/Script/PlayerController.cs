@@ -43,10 +43,11 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 100;
     private bool hasDied;
 
-    public CrystalScript crystal;
+    
 
     private void Start()
     {
+        currentHealth = maxHealth;
         gravityValue = gravity;
         elevatorSpeed = 170f;
     }
@@ -128,9 +129,10 @@ public class PlayerController : MonoBehaviour
             {
                 Instantiate(bulletImpact, hit.point, transform.rotation);
 
-                if (hit.transform.CompareTag("Crystal"))
+                if (hit.transform.tag == "Crystal")
                 {
-                    crystal.TakeDamage();
+                    //crystal.TakeDamage();
+                    hit.transform.GetComponent<CrystalScript>().TakeDamage();
                 }
                 if (hit.transform.tag == "Enemy")
                 {
