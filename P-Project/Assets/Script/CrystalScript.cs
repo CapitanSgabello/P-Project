@@ -9,21 +9,27 @@ public class CrystalScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void TakeDamage()
     {
         health--;
 
-        if(health <= 0)
+        if (health <= 0)
         {
             open = true;
         }
+    }
+
+    //Funzione che ritorna il booleano
+    public bool GetBool()
+    {
+        return open;
     }
 }

@@ -11,7 +11,7 @@ public class LockedDoor : MonoBehaviour
     private float posMax;
     private float posMin;
     public float elevatorMax;
-    public CrystalScript crystal;
+    public GameObject crystal;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +23,8 @@ public class LockedDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool open = crystal.open;
-        shouldOpen = open; 
+        
+        shouldOpen = crystal.GetComponent<CrystalScript>().GetBool(); 
 
         if (shouldOpen && (doorModel.position.y != posMax))
         {
