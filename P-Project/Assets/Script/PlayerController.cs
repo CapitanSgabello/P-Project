@@ -155,9 +155,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void addHealth(int healAmount)
+    public void addHealth(int healthAmount)
     {
-        currentHealth += healAmount;
+        currentHealth += healthAmount;
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
