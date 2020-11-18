@@ -10448,7 +10448,7 @@ GameObject:
   - component: {fileID: 549083776}
   m_Layer: 0
   m_Name: Zumba_Rosso
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26774,7 +26774,7 @@ GameObject:
   - component: {fileID: 2066417866}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26876,6 +26876,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyController: {fileID: 2066417864}
   health: 3
+  explosion: {fileID: 805028405547295922, guid: 73e8b280de3bcea41be72c2dad99cb5b,
+    type: 3}
   playerRange: 10
   moveSpeed: 2
   speed: 0.5
