@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public CharacterController enemyController;             //character controller del nemico
-
+    public GameObject explosion;                            //animazione morte nemico
     public int health = 3;                                  //vita del nemico
     public float playerRange = 10f;
     public float moveSpeed;                                 //velocità del nemico
@@ -48,6 +48,9 @@ public class EnemyController : MonoBehaviour
     {
         health--;
         if (health <= 0)
+        {
             Destroy(gameObject);
+            Instantiate(explosion, transform.position, transform.rotation);
+        }
     }
 }
