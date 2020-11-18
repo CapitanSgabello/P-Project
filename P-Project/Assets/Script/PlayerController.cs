@@ -129,6 +129,12 @@ public class PlayerController : MonoBehaviour
             {
                 Instantiate(bulletImpact, hit.point, transform.rotation);
 
+                if (hit.transform.tag == "Enemy")
+                {
+                    //enemy.TakeDamage();
+                    hit.transform.GetComponent<EnemyController>().takeDamage();
+                }
+
                 if (hit.transform.tag == "Crystal")
                 {
                     //crystal.TakeDamage();
