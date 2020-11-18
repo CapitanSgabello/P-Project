@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     /*Variabili e costanti per il movimento*/
     public float moveSpeed;
     public Joystick joystickMove;
-    public Animator anim;
 
     /*Variabili e costanti per la visuale*/
     public float sensibility;
@@ -112,16 +111,6 @@ public class PlayerController : MonoBehaviour
         playerFall.y = gravityValue * Time.deltaTime;
 
         characterController.Move(playerFall * Time.deltaTime);
-
-        if ( moveInput != Vector3.zero)
-        {
-            anim.SetBool("isMoving", true);
-        }
-        else
-        {
-            anim.SetBool("isMoving", false);
-        }
-
     }
 
     /* Viene richiamata dall'oggetto ascensore che informa il giocatore di essere su un ascensore */
@@ -142,18 +131,14 @@ public class PlayerController : MonoBehaviour
 
                 if (hit.transform.tag == "Enemy")
                 {
-                    //enemy.TakeDamage();
+                    
                     hit.transform.GetComponent<EnemyController>().takeDamage();
                 }
 
                 if (hit.transform.tag == "Crystal")
                 {
-                    //crystal.TakeDamage();
+                    
                     hit.transform.GetComponent<CrystalScript>().TakeDamage();
-                }
-                if (hit.transform.tag == "Enemy")
-                {
-                    hit.transform.GetComponent<EnemyController>().takeDamage();
                 }
             }
             currentAmmo--;
