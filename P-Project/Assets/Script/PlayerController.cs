@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     /*Variabili e costanti per il movimento*/
     public float moveSpeed;
     public Joystick joystickMove;
+    public Animator anim;
 
     /*Variabili e costanti per la visuale*/
     public float sensibility;
@@ -111,6 +112,16 @@ public class PlayerController : MonoBehaviour
         playerFall.y = gravityValue * Time.deltaTime;
 
         characterController.Move(playerFall * Time.deltaTime);
+
+        if (moveInput != Vector3.zero)
+        {
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
+        }
+
     }
 
     /* Viene richiamata dall'oggetto ascensore che informa il giocatore di essere su un ascensore */
