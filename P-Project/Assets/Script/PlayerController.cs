@@ -131,18 +131,14 @@ public class PlayerController : MonoBehaviour
 
                 if (hit.transform.tag == "Enemy")
                 {
-                    //enemy.TakeDamage();
+                    
                     hit.transform.GetComponent<EnemyController>().takeDamage();
                 }
 
                 if (hit.transform.tag == "Crystal")
                 {
-                    //crystal.TakeDamage();
+                    
                     hit.transform.GetComponent<CrystalScript>().TakeDamage();
-                }
-                if (hit.transform.tag == "Enemy")
-                {
-                    hit.transform.GetComponent<EnemyController>().takeDamage();
                 }
             }
             currentAmmo--;
