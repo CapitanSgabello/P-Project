@@ -26774,7 +26774,7 @@ GameObject:
   - component: {fileID: 2066417866}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26875,6 +26875,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyController: {fileID: 2066417864}
+  explosion: {fileID: 6089674534642855384, guid: 0563c1daba3d10843bc3017c93d7fc67,
+    type: 3}
   health: 3
   playerRange: 10
   moveSpeed: 2
