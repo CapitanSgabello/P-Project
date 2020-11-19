@@ -632,6 +632,9 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
