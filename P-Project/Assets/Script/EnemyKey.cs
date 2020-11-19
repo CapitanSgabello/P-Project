@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿//SCRIPT DEL NEMICO CHE UNA VOLTA UCCISO APRE LA PORTA
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyKey : MonoBehaviour
 {
     public CharacterController enemyController;             //character controller del nemico
     public GameObject explosion;                            //animazione morte nemico
@@ -14,6 +16,7 @@ public class EnemyController : MonoBehaviour
     public int damageAmount;                                //danno del nemico
     public float damageRate = .5f;                         //tempo di sparo del nemico
     private float damageCounter;
+    
 
     /* Variabili e costanti per la gravità */
     private Vector3 playerFall;
@@ -26,7 +29,7 @@ public class EnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-   void Update()
+    void Update()
     {
         enemyAnim.SetBool("Walk", false);                       //se il nemico è fermo bool walk = false e bool idle = true
         enemyAnim.SetBool("Idle", true);
@@ -40,12 +43,12 @@ public class EnemyController : MonoBehaviour
 
             enemyAnim.SetBool("Walk", true);                    //se il nemico comincia a camminare walk = true e idle = false
             enemyAnim.SetBool("Idle", false);
-           
+
             /*Gravità*/
             playerFall.y = gravity * Time.deltaTime;
             enemyController.Move(playerFall * Time.deltaTime);
 
-            
+
 
 
         }
@@ -56,6 +59,7 @@ public class EnemyController : MonoBehaviour
         health -= damageAmount;
         if (health <= 0)
         {
+           
             Destroy(gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
         }
@@ -72,6 +76,10 @@ public class EnemyController : MonoBehaviour
             }
             damageCounter = damageRate;
         }
-       
+
+    }
+    public int GetHealth()
+    {
+        return health;
     }
 }

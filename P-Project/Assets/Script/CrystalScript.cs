@@ -17,9 +17,9 @@ public class CrystalScript : MonoBehaviour
     {
 
     }
-    public void TakeDamage()
+    public void TakeDamage(int damageAmount)
     {
-        health--;
+        health -= damageAmount;
 
         if (health <= 0)
         {
