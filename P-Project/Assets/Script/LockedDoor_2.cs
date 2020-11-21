@@ -12,11 +12,11 @@ public class LockedDoor_2 : MonoBehaviour
     public Transform doorModel;
     public GameObject doorCollider;
     public float openSpeed;
-    private bool shouldOpen = false;
+    public bool shouldOpen = false;
     private float posMax;
     private float posMin;
     public float elevatorMax;
-    public GameObject enemy;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +28,7 @@ public class LockedDoor_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemy.transform.GetComponent<EnemyKey>().GetHealth() <= 0)
-        {
-            shouldOpen = true;
-        }
+       
         
 
         if (shouldOpen && (doorModel.position.y != posMax))

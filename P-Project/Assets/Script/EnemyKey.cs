@@ -16,7 +16,7 @@ public class EnemyKey : MonoBehaviour
     public int damageAmount;                                //danno del nemico
     public float damageRate = .5f;                         //tempo di sparo del nemico
     private float damageCounter;
-    
+    public GameObject doorLocked;                           //porta chiusa
 
     /* Variabili e costanti per la gravità */
     private Vector3 playerFall;
@@ -59,7 +59,7 @@ public class EnemyKey : MonoBehaviour
         health -= damageAmount;
         if (health <= 0)
         {
-           
+            doorLocked.transform.GetComponent<LockedDoor_2>().shouldOpen = true;
             Destroy(gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
         }

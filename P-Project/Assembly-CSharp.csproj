@@ -78,6 +78,7 @@
     <Compile Include="Assets\Script\FPSCounter.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\HealthPickup.cs" />
+    <Compile Include="Assets\Script\KeyPickUp.cs" />
     <Compile Include="Assets\Script\LockedDoor.cs" />
     <Compile Include="Assets\Script\LockedDoor_2.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
