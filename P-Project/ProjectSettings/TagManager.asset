@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Crystal
   - Enemy
+  - EnemyKey
   layers:
   - Default
   - TransparentFX

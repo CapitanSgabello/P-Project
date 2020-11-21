@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     public int currentHealth;
     public int maxHealth = 100;
     private bool hasDied;
-
+    public int damageAmount;                        //danno arma
     
 
     private void Start()
@@ -140,17 +140,22 @@ public class PlayerController : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 Instantiate(bulletImpact, hit.point, transform.rotation);
-
+                
                 if (hit.transform.tag == "Enemy")
                 {
                     
-                    hit.transform.GetComponent<EnemyController>().takeDamage();
+                    hit.transform.GetComponent<EnemyController>().takeDamage(damageAmount);
+                    
+                }
+                if (hit.transform.tag == "EnemyKey")
+                {
+                    hit.transform.GetComponent<EnemyKey>().takeDamage(damageAmount);
                 }
 
                 if (hit.transform.tag == "Crystal")
                 {
                     
-                    hit.transform.GetComponent<CrystalScript>().TakeDamage();
+                    hit.transform.GetComponent<CrystalScript>().TakeDamage(damageAmount);
                 }
             }
             currentAmmo--;
@@ -158,9 +163,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void takeDamage(int damageAmount)
+    public void TakeDamage(int damageAmount)
     {
-        currentHealth -= damageAmount;
+        currentHealth -= damageAmount ;
 
         if (currentHealth <= 0)
         {
