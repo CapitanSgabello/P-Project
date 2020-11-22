@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
+  m_Name: T_Wall_3_Segrete
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: 21300000, guid: 735649f3e783a464386b99c5e4c70359, type: 3}
+  m_DefaultGameObject: {fileID: 5926991439486403142, guid: 2c5bfff49b9bdb3438f6c8d5a58b8af5,
+    type: 3}
+  m_DefaultColliderType: 1
+  m_TilingRules: []
