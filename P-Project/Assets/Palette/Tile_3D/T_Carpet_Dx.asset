@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: T_Carpet_Dx
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: 9a12adcaf032a1740bd64c81bf3bbf18, type: 3}
+  m_DefaultSprite: {fileID: 21300000, guid: e819b0ebe1ade154fbec016259aacc3e, type: 3}
   m_DefaultGameObject: {fileID: 6257383490486414643, guid: 2ed4637710b85d9409e9a9245b924f66,
     type: 3}
   m_DefaultColliderType: 1
