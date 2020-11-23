@@ -17,17 +17,18 @@ public class EnemyController : MonoBehaviour
 
     /* Variabili e costanti per la gravità */
     private Vector3 playerFall;
-    public float gravity = -800f;
+    public float gravity;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gravity = 0f;
     }
 
     // Update is called once per frame
    void Update()
     {
+        gravity = -400f;
         enemyAnim.SetBool("Walk", false);                       //se il nemico è fermo bool walk = false e bool idle = true
         enemyAnim.SetBool("Idle", true);
 
