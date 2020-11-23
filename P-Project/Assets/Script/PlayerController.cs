@@ -25,7 +25,8 @@ public class PlayerController : MonoBehaviour
     /* Variabili e costanti per la gravità */
     private Vector3 playerFall;
     public float gravityValue;
-    public float gravity = -800f;
+    public float gravity = -400f;
+    public float gravityActivation = 5f;
 
     /* Variabili e costanti per gli ascensori */
     public Transform groundCheck;
@@ -49,7 +50,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        gravityValue = gravity;
+        gravityValue = 0;
         elevatorSpeed = 170f;
     }
     private void Awake()
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+
         /* Impostazioni per l'Ascensore */
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, elevatorMask);
 
