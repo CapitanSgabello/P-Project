@@ -171,6 +171,7 @@ public class PlayerController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            currentHealth = 0;
             deadScreen.SetActive(true);
             hasDied = true;
         }
