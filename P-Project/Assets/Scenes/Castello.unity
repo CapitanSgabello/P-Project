@@ -24011,7 +24011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5686275, g: 0.027450982, b: 0.027450982, a: 1}
+  m_Color: {r: 0.5686275, g: 0.027450982, b: 0.027450982, a: 0.972549}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -26415,7 +26415,7 @@ MonoBehaviour:
   moveSpeed: 5
   joystickMove: {fileID: 3457558463116512586}
   anim: {fileID: 731618980}
-  sensibility: 100
+  sensibility: 150
   joystickVisual: {fileID: 722682876}
   minAngleVisual: -10
   maxAngleVisual: 10
@@ -27927,7 +27927,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 731618977}
-        m_MethodName: modifyMoveSpeed
+        m_MethodName: modifySensibity
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

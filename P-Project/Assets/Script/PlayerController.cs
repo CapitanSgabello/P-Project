@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
     }
     public void modifySensibity()
     {
-        sensibility += 15;
+        sensibility += 50;
     }
 
     private void Move()
