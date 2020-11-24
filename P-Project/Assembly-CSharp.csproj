@@ -66,6 +66,7 @@
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Script\AmmoPickup.cs" />
+    <Compile Include="Assets\Script\AmmoScript.cs" />
     <Compile Include="Assets\Script\AscensoreScript.cs" />
     <Compile Include="Assets\Script\BillBoard.cs" />
     <Compile Include="Assets\Script\ButtonScript.cs" />
