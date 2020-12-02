@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     public int damageAmount;                                //danno del nemico
     public float damageRate = .5f;                         //tempo di sparo del nemico
     private float damageCounter;
+    public CapsuleCollider other;
 
     /* Variabili e costanti per la gravità */
     private Vector3 playerFall;
@@ -26,11 +27,12 @@ public class EnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-   void Update()
+    void Update()
     {
         gravity = -400f;
-        enemyAnim.SetBool("Walk", false);                       //se il nemico è fermo bool walk = false e bool idle = true
-        enemyAnim.SetBool("Idle", true);
+        enemyAnim.ResetTrigger("Walk");
+        enemyAnim.SetTrigger("Idle");
+        enemyAnim.ResetTrigger("Hit");
 
 
 
@@ -39,17 +41,22 @@ public class EnemyController : MonoBehaviour
             Vector3 playerDirection = PlayerController.instance.transform.position - transform.position;
             enemyController.Move(playerDirection * Time.deltaTime * speed);
 
-            enemyAnim.SetBool("Walk", true);                    //se il nemico comincia a camminare walk = true e idle = false
-            enemyAnim.SetBool("Idle", false);
-           
+            enemyAnim.SetTrigger("Walk");
+            enemyAnim.ResetTrigger("Idle");
+            enemyAnim.ResetTrigger("Hit");
+
             /*Gravità*/
             playerFall.y = gravity * Time.deltaTime;
             enemyController.Move(playerFall * Time.deltaTime);
 
-            
+
 
 
         }
+        if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < .7f) { 
+        OnTriggerStay(other);
+        }
+        
     }
 
     public void takeDamage(int damageAmount)
@@ -69,7 +76,12 @@ public class EnemyController : MonoBehaviour
         {
             if (other.tag == "Player")
             {
+                enemyAnim.ResetTrigger("Walk");
+                enemyAnim.ResetTrigger("Idle");
+                enemyAnim.SetTrigger("Hit");
+
                 PlayerController.instance.TakeDamage(damageAmount);
+              
             }
             damageCounter = damageRate;
         }
