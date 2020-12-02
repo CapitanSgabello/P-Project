@@ -67,6 +67,7 @@
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Script\AmmoPickup.cs" />
     <Compile Include="Assets\Script\AmmoScript.cs" />
+    <Compile Include="Assets\Script\ArmabrilloScript.cs" />
     <Compile Include="Assets\Script\AscensoreScript.cs" />
     <Compile Include="Assets\Script\BillBoard.cs" />
     <Compile Include="Assets\Script\ButtonScript.cs" />
@@ -74,7 +75,6 @@
     <Compile Include="Assets\Script\DistruzioneOggetti.cs" />
     <Compile Include="Assets\Script\Door&amp;ButtonScript.cs" />
     <Compile Include="Assets\Script\DoorScript.cs" />
-    <Compile Include="Assets\Script\EnemyController.cs" />
     <Compile Include="Assets\Script\EnemyKey.cs" />
     <Compile Include="Assets\Script\FPSCounter.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
@@ -92,6 +92,7 @@
     <Compile Include="Assets\Script\Restart.cs" />
     <Compile Include="Assets\Script\SceneLoading.cs" />
     <Compile Include="Assets\Script\ScoreScript.cs" />
+    <Compile Include="Assets\Script\ZoombaScript.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

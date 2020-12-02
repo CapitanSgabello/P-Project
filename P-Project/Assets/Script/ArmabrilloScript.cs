@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class ArmabrilloScript : MonoBehaviour
 {
     public CharacterController enemyController;             //character controller del nemico
     public GameObject explosion;                            //animazione morte nemico
@@ -53,10 +53,11 @@ public class EnemyController : MonoBehaviour
 
 
         }
-        if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < .7f) { 
-        OnTriggerStay(other);
+        if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < .7f)
+        {
+            OnTriggerStay(other);
         }
-        
+
     }
 
     public void takeDamage(int damageAmount)
@@ -81,10 +82,10 @@ public class EnemyController : MonoBehaviour
                 enemyAnim.SetTrigger("Hit");
 
                 PlayerController.instance.TakeDamage(damageAmount);
-              
+
             }
             damageCounter = damageRate;
         }
-       
+
     }
 }

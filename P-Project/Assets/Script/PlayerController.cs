@@ -143,11 +143,17 @@ public class PlayerController : MonoBehaviour
             {
                 Instantiate(bulletImpact, hit.point, transform.rotation);
                 
-                if (hit.transform.tag == "Enemy")
+                if (hit.transform.tag == "Zoomba")
                 {
                     
-                    hit.transform.GetComponent<EnemyController>().takeDamage(damageAmount);
+                    hit.transform.GetComponent<ZoombaScript>().takeDamage(damageAmount);
                     
+                }
+                if (hit.transform.tag == "Armabrillo")
+                {
+
+                    hit.transform.GetComponent<ArmabrilloScript>().takeDamage(damageAmount);
+
                 }
                 if (hit.transform.tag == "EnemyKey")
                 {
