@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZoombaScript : MonoBehaviour
 {
-    public CharacterController enemyController;             //character controller del nemico
+    public CharacterController zoombaController;             //character controller del nemico
     public GameObject explosion;                            //animazione morte nemico
     public int health = 3;                                  //vita del nemico
     public float playerRange = 10f;
@@ -39,7 +39,7 @@ public class ZoombaScript : MonoBehaviour
         if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < playerRange)
         {
             Vector3 playerDirection = PlayerController.instance.transform.position - transform.position;
-            enemyController.Move(playerDirection * Time.deltaTime * speed);
+            zoombaController.Move(playerDirection * Time.deltaTime * speed);
 
             enemyAnim.SetTrigger("Walk");
             enemyAnim.ResetTrigger("Idle");
@@ -47,7 +47,7 @@ public class ZoombaScript : MonoBehaviour
 
             /*Gravità*/
             playerFall.y = gravity * Time.deltaTime;
-            enemyController.Move(playerFall * Time.deltaTime);
+            zoombaController.Move(playerFall * Time.deltaTime);
 
 
 
