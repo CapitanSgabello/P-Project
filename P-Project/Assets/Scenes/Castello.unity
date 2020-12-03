@@ -65196,7 +65196,7 @@ MonoBehaviour:
   doorCollider: {fileID: 7362250168038573979}
   openSpeed: 2
   elevatorMax: 1
-  crystal: {fileID: 0}
+  crystal: {fileID: 5111548639619972048}
 --- !u!1001 &7362250166910066930
 PrefabInstance:
   m_ObjectHideFlags: 0
