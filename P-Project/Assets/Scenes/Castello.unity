@@ -8993,7 +8993,7 @@ PrefabInstance:
     - target: {fileID: 7317971532260738662, guid: 1cc9889db33e367479ff13aadc3cd753,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7317971532260738662, guid: 1cc9889db33e367479ff13aadc3cd753,
         type: 3}
@@ -49736,7 +49736,7 @@ RectTransform:
   - {fileID: 68444689}
   - {fileID: 51378555}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

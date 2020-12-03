@@ -115,7 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyController: {fileID: 1271546243604677600}
-  explosion: {fileID: 0}
+  explosion: {fileID: 5237569064193594892, guid: 8221d13dec8aff34da2888635bb38656,
+    type: 3}
   health: 3
   playerRange: 10
   moveSpeed: 2
