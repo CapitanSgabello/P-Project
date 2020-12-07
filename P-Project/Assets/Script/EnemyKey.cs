@@ -62,6 +62,8 @@ public class EnemyKey : MonoBehaviour
             doorLocked.transform.GetComponent<LockedDoor_2>().shouldOpen = true;
             Destroy(gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
+
+            /*AudioController.instance.playEnemyDeath()*/
         }
     }
 

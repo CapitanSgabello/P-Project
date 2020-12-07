@@ -64,6 +64,8 @@ public class ZoombaScript : MonoBehaviour
         {
             Destroy(gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
+
+            AudioController.instance.PlayEnemyDeath();
         }
     }
 
