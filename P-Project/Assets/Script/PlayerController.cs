@@ -165,6 +165,8 @@ public class PlayerController : MonoBehaviour
                     
                     hit.transform.GetComponent<CrystalScript>().TakeDamage(damageAmount);
                 }
+
+                /*AudioController.instance.PlayGunShot();*/
             }
             currentAmmo--;
             gunAnim.SetTrigger("Shoot");
@@ -181,6 +183,8 @@ public class PlayerController : MonoBehaviour
             deadScreen.SetActive(true);
             hasDied = true;
         }
+
+        /*AudioController.instance.PlayPlayerHurt();*/
     }
 
     public void addHealth(int healthAmount)
