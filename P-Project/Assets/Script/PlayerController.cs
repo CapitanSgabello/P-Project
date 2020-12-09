@@ -165,6 +165,10 @@ public class PlayerController : MonoBehaviour
                     
                     hit.transform.GetComponent<CrystalScript>().TakeDamage(damageAmount);
                 }
+                if(hit.transform.tag == "Plant")
+                {
+                    hit.transform.GetComponent<PlantScript>().TakeDamage(damageAmount);
+                }
 
                 /*AudioController.instance.PlayGunShot();*/
             }
