@@ -45,7 +45,8 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 100;
     private bool hasDied;
     public int damageAmount;                        //danno arma
-    
+
+    public Transform hitPoint;
 
     private void Start()
     {

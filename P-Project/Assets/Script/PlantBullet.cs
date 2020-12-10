@@ -4,38 +4,36 @@ using UnityEngine;
 
 public class PlantBullet : MonoBehaviour
 {
-
-    public int damageAmount = 3;                       
-
-    public float bulletSpeed = 3f;                   
-
-    public CharacterController bulletController;                      
-
-    private Vector3 direction;                     
+    public Rigidbody bulletRB;
+    public int damageAmount;
+    public float speed;
+    private Vector3 direction;
+    public float timetoLive;
 
     // Start is called before the first frame update
     void Start()
     {
-        bulletController.enabled = true;
-        direction = PlayerController.instance.transform.position - transform.position;
-        direction = direction * bulletSpeed;
+        direction = PlayerController.instance.hitPoint.position - transform.position;
+        direction = direction * speed;
     }
 
     // Update is called once per frame
     void Update()
     {
-         bulletController.Move(direction * bulletSpeed * Time.deltaTime);
-        
+        bulletRB.velocity = direction * Time.deltaTime;
+        timetoLive -= Time.deltaTime;
+        if(timetoLive <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    //Funzione che identifica il danno del proiettile
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             PlayerController.instance.TakeDamage(damageAmount);
-
-            Destroy(gameObject);                                         
         }
+        Destroy(gameObject);
     }
 }
