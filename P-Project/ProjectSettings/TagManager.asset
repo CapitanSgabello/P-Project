@@ -9,6 +9,7 @@ TagManager:
   - EnemyKey
   - Zoomba
   - Armabrillo
+  - Plant
   layers:
   - Default
   - TransparentFX

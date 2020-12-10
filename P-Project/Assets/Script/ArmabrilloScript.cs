@@ -65,8 +65,9 @@ public class ArmabrilloScript : MonoBehaviour
         health -= damageAmount;
         if (health <= 0)
         {
-            Destroy(gameObject);
+           
             Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(gameObject);
 
             /*AudioController.instance.playEnemyDeath()*/
         }

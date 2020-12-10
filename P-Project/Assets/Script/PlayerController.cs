@@ -45,7 +45,8 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 100;
     private bool hasDied;
     public int damageAmount;                        //danno arma
-    
+
+    public Transform hitPoint;
 
     private void Start()
     {
@@ -164,6 +165,10 @@ public class PlayerController : MonoBehaviour
                 {
                     
                     hit.transform.GetComponent<CrystalScript>().TakeDamage(damageAmount);
+                }
+                if(hit.transform.tag == "Plant")
+                {
+                    hit.transform.GetComponent<PlantScript>().TakeDamage(damageAmount);
                 }
 
                 /*AudioController.instance.PlayGunShot();*/
