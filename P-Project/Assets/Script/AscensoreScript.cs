@@ -54,6 +54,8 @@ public class AscensoreScript : MonoBehaviour
             delay = 0.5f;
             startElevator = true;
             stop = false;
+
+            AudioController.instance.PlayElevator();
         }
     }
 

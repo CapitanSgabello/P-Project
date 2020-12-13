@@ -69,7 +69,7 @@ public class ArmabrilloScript : MonoBehaviour
             Instantiate(explosion, transform.position, transform.rotation);
             Destroy(gameObject);
 
-            /*AudioController.instance.playEnemyDeath()*/
+            AudioController.instance.PlayEnemyDeath();
         }
     }
 

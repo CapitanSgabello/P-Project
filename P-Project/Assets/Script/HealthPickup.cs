@@ -27,7 +27,7 @@ public class HealthPickup : MonoBehaviour
 
             Destroy(gameObject);
 
-            /*AudioController.instance.PlayHealthPickup();*/
+            AudioController.instance.PlayHealthPickup();
             
         }
     }

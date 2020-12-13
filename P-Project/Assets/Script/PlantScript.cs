@@ -46,6 +46,8 @@ public class PlantScript : MonoBehaviour
         {
            // Instantiate(deathAnim, transform.position, transform.rotation);
             Destroy(gameObject);
+
+            AudioController.instance.PlayEnemyDeath();
         }
     }
 }

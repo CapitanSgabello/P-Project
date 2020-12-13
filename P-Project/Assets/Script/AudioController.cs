@@ -7,7 +7,7 @@ public class AudioController : MonoBehaviour
 {
     public static AudioController instance;
 
-    public AudioSource ammo, enemyDeath, enemyShot, gunShot, health, playerHurt, elevator, crystal, enemyKey, key, menu, deathScreen, steps;
+    public AudioSource ammo, enemyDeath, enemyShot, gunShot, health, playerHurt, elevator, crystal, key, menu, deathScreen;
 
     private void Awake()
     {
@@ -75,11 +75,7 @@ public class AudioController : MonoBehaviour
         crystal.Stop();
         crystal.Play();
     }
-    public void PlayEnemyKey()
-    {
-        enemyKey.Stop();
-        enemyKey.Play();
-    }
+
 
     public void PlayKeyPickup()
     {
@@ -99,10 +95,5 @@ public class AudioController : MonoBehaviour
         deathScreen.Play();
     }
 
-    public void PlaySteps()
-    {
-        steps.Stop();
-        steps.Play();
-    }
 
 }
