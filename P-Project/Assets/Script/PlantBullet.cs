@@ -15,6 +15,7 @@ public class PlantBullet : MonoBehaviour
     {
         direction = PlayerController.instance.hitPoint.position - transform.position;
         direction = direction * speed;
+        AudioController.instance.PlayEnemyShot();
     }
 
     // Update is called once per frame

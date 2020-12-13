@@ -24,6 +24,8 @@ public class KeyPickUp : MonoBehaviour
         {
             lockedDoor.transform.GetComponent<LockedDoor_2>().shouldOpen = true;
             Destroy(gameObject);
+
+            AudioController.instance.PlayKeyPickup();
         }
     }
 }
