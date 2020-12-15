@@ -43,8 +43,9 @@ public class PlayerController : MonoBehaviour
 
     public int currentHealth;
     public int maxHealth = 100;
-    private bool hasDied;
+    public bool hasDied;
     public int damageAmount;                        //danno arma
+    public bool paused;
 
     public Transform hitPoint;
 
@@ -74,7 +75,7 @@ public class PlayerController : MonoBehaviour
             gravityValue = gravity;
         }
 
-        if (!hasDied)
+        if (!hasDied && !paused)
         {
             Move();
             LookAround();
@@ -136,45 +137,48 @@ public class PlayerController : MonoBehaviour
 
     public void Fire()
     {
-        if (currentAmmo > 0)
+        if (!hasDied && !paused)
         {
-            Ray ray = viewCam.ViewportPointToRay(new Vector3(.5f, .5f, .0f));
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (currentAmmo > 0)
             {
-                Instantiate(bulletImpact, hit.point, transform.rotation);
-                
-                if (hit.transform.tag == "Zoomba")
+                Ray ray = viewCam.ViewportPointToRay(new Vector3(.5f, .5f, .0f));
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
                 {
-                    
-                    hit.transform.GetComponent<ZoombaScript>().takeDamage(damageAmount);
-                    
-                }
-                if (hit.transform.tag == "Armabrillo")
-                {
+                    Instantiate(bulletImpact, hit.point, transform.rotation);
 
-                    hit.transform.GetComponent<ArmabrilloScript>().takeDamage(damageAmount);
+                    if (hit.transform.tag == "Zoomba")
+                    {
 
-                }
-                if (hit.transform.tag == "EnemyKey")
-                {
-                    hit.transform.GetComponent<EnemyKey>().takeDamage(damageAmount);
-                }
+                        hit.transform.GetComponent<ZoombaScript>().takeDamage(damageAmount);
 
-                if (hit.transform.tag == "Crystal")
-                {
-                    
-                    hit.transform.GetComponent<CrystalScript>().TakeDamage(damageAmount);
-                }
-                if(hit.transform.tag == "Plant")
-                {
-                    hit.transform.GetComponent<PlantScript>().TakeDamage(damageAmount);
-                }
+                    }
+                    if (hit.transform.tag == "Armabrillo")
+                    {
 
-                AudioController.instance.PlayGunShot();
+                        hit.transform.GetComponent<ArmabrilloScript>().takeDamage(damageAmount);
+
+                    }
+                    if (hit.transform.tag == "EnemyKey")
+                    {
+                        hit.transform.GetComponent<EnemyKey>().takeDamage(damageAmount);
+                    }
+
+                    if (hit.transform.tag == "Crystal")
+                    {
+
+                        hit.transform.GetComponent<CrystalScript>().TakeDamage(damageAmount);
+                    }
+                    if (hit.transform.tag == "Plant")
+                    {
+                        hit.transform.GetComponent<PlantScript>().TakeDamage(damageAmount);
+                    }
+
+                    AudioController.instance.PlayGunShot();
+                }
+                currentAmmo--;
+                gunAnim.SetTrigger("Shoot");
             }
-            currentAmmo--;
-            gunAnim.SetTrigger("Shoot");
         }
     }
 
@@ -199,5 +203,13 @@ public class PlayerController : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+    }
+    public void isPaused()
+    {
+        paused = true;
+    }
+    public void isNotPaused()
+    {
+        paused = false;
     }
 }

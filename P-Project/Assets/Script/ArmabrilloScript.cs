@@ -34,61 +34,66 @@ public class ArmabrilloScript : MonoBehaviour
         enemyAnim.SetTrigger("Idle");
         enemyAnim.ResetTrigger("Hit");
 
-
-
-        if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < playerRange)
+        if (!PlayerController.instance.paused)
         {
-            Vector3 playerDirection = PlayerController.instance.transform.position - transform.position;
-            enemyController.Move(playerDirection * Time.deltaTime * speed);
+            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < playerRange)
+            {
+                Vector3 playerDirection = PlayerController.instance.transform.position - transform.position;
+                enemyController.Move(playerDirection * Time.deltaTime * speed);
 
-            enemyAnim.SetTrigger("Walk");
-            enemyAnim.ResetTrigger("Idle");
-            enemyAnim.ResetTrigger("Hit");
+                enemyAnim.SetTrigger("Walk");
+                enemyAnim.ResetTrigger("Idle");
+                enemyAnim.ResetTrigger("Hit");
 
-            /*Gravità*/
-            playerFall.y = gravity * Time.deltaTime;
-            enemyController.Move(playerFall * Time.deltaTime);
+                /*Gravità*/
+                playerFall.y = gravity * Time.deltaTime;
+                enemyController.Move(playerFall * Time.deltaTime);
 
+            }
 
-
-
+            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < .7f)
+            {
+                OnTriggerStay(other);
+            }
         }
-        if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < .7f)
-        {
-            OnTriggerStay(other);
-        }
-
     }
 
     public void takeDamage(int damageAmount)
     {
-        health -= damageAmount;
-        if (health <= 0)
+        if (!PlayerController.instance.paused)
         {
-           
-            Instantiate(explosion, transform.position, transform.rotation);
-            Destroy(gameObject);
+            health -= damageAmount;
+            if (health <= 0)
+            {
 
-            AudioController.instance.PlayEnemyDeath();
+                Instantiate(explosion, transform.position, transform.rotation);
+                Destroy(gameObject);
+
+                AudioController.instance.PlayEnemyDeath();
+            }
         }
     }
 
     public void OnTriggerStay(Collider other)
     {
-        damageCounter -= Time.deltaTime;                          //ogni quanto può sparare il nemico
-        if (damageCounter <= 0)
+        if (!PlayerController.instance.paused)
         {
-            if (other.tag == "Player")
+            damageCounter -= Time.deltaTime;                          //ogni quanto può sparare il nemico
+            if (damageCounter <= 0)
             {
-                enemyAnim.ResetTrigger("Walk");
-                enemyAnim.ResetTrigger("Idle");
-                enemyAnim.SetTrigger("Hit");
+                if (other.tag == "Player")
+                {
+                    enemyAnim.ResetTrigger("Walk");
+                    enemyAnim.ResetTrigger("Idle");
+                    enemyAnim.SetTrigger("Hit");
 
-                PlayerController.instance.TakeDamage(damageAmount);
+                    PlayerController.instance.TakeDamage(damageAmount);
 
+                }
+                damageCounter = damageRate;
             }
-            damageCounter = damageRate;
         }
+
 
     }
 }

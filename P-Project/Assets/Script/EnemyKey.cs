@@ -35,48 +35,54 @@ public class EnemyKey : MonoBehaviour
         enemyAnim.SetBool("Idle", true);
 
 
-
-        if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < playerRange)
+        if (!PlayerController.instance.paused)
         {
-            Vector3 playerDirection = PlayerController.instance.transform.position - transform.position;
-            enemyController.Move(playerDirection * Time.deltaTime * speed);
+            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < playerRange)
+            {
+                Vector3 playerDirection = PlayerController.instance.transform.position - transform.position;
+                enemyController.Move(playerDirection * Time.deltaTime * speed);
 
-            enemyAnim.SetBool("Walk", true);                    //se il nemico comincia a camminare walk = true e idle = false
-            enemyAnim.SetBool("Idle", false);
+                enemyAnim.SetBool("Walk", true);                    //se il nemico comincia a camminare walk = true e idle = false
+                enemyAnim.SetBool("Idle", false);
 
-            /*Gravità*/
-            playerFall.y = gravity * Time.deltaTime;
-            enemyController.Move(playerFall * Time.deltaTime);
+                /*Gravità*/
+                playerFall.y = gravity * Time.deltaTime;
+                enemyController.Move(playerFall * Time.deltaTime);
 
-
-
-
+            }
         }
+        
     }
 
     public void takeDamage(int damageAmount)
     {
-        health -= damageAmount;
-        if (health <= 0)
+        if (!PlayerController.instance.paused)
         {
-            doorLocked.transform.GetComponent<LockedDoor_2>().shouldOpen = true;
-            Destroy(gameObject);
-            Instantiate(explosion, transform.position, transform.rotation);
+            health -= damageAmount;
+            if (health <= 0)
+            {
+                doorLocked.transform.GetComponent<LockedDoor_2>().shouldOpen = true;
+                Destroy(gameObject);
+                Instantiate(explosion, transform.position, transform.rotation);
 
-            AudioController.instance.PlayEnemyDeath();
+                AudioController.instance.PlayEnemyDeath();
+            }
         }
     }
 
     public void OnTriggerStay(Collider other)
     {
-        damageCounter -= Time.deltaTime;                          //ogni quanto può sparare il nemico
-        if (damageCounter <= 0)
+        if (!PlayerController.instance.paused)
         {
-            if (other.tag == "Player")
+            damageCounter -= Time.deltaTime;                          //ogni quanto può sparare il nemico
+            if (damageCounter <= 0)
             {
-                PlayerController.instance.TakeDamage(damageAmount);
+                if (other.tag == "Player")
+                {
+                    PlayerController.instance.TakeDamage(damageAmount);
+                }
+                damageCounter = damageRate;
             }
-            damageCounter = damageRate;
         }
 
     }

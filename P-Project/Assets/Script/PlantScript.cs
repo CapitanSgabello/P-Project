@@ -26,28 +26,33 @@ public class PlantScript : MonoBehaviour
         plantAnim.SetTrigger("Idle");
         plantAnim.ResetTrigger("Attack");
 
-
-        damageCounter -= Time.deltaTime;
-
-        if ((Vector3.Distance(transform.position, PlayerController.instance.transform.position) < range) && (damageCounter <= 0))
+        if (!PlayerController.instance.paused)
         {
-            plantAnim.ResetTrigger("Idle");
-            plantAnim.SetTrigger("Attack");
-            Instantiate(bullet, firePoint.position, firePoint.rotation);
-            damageCounter = fireRate;
+            damageCounter -= Time.deltaTime;
 
-        }
+            if ((Vector3.Distance(transform.position, PlayerController.instance.transform.position) < range) && (damageCounter <= 0))
+            {
+                plantAnim.ResetTrigger("Idle");
+                plantAnim.SetTrigger("Attack");
+                Instantiate(bullet, firePoint.position, firePoint.rotation);
+                damageCounter = fireRate;
+
+            }
+        } 
     }
 
     public void TakeDamage(int damageAmount)
     {
-        health -= damageAmount;
-        if(health <= 0)
+        if (!PlayerController.instance.paused)
         {
-           // Instantiate(deathAnim, transform.position, transform.rotation);
-            Destroy(gameObject);
+            health -= damageAmount;
+            if (health <= 0)
+            {
+                // Instantiate(deathAnim, transform.position, transform.rotation);
+                Destroy(gameObject);
 
-            AudioController.instance.PlayEnemyDeath();
+                AudioController.instance.PlayEnemyDeath();
+            }
         }
     }
 }

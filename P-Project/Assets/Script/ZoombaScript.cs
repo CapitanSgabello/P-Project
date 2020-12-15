@@ -32,59 +32,59 @@ public class ZoombaScript : MonoBehaviour
         gravity = -400f;
         enemyAnim.ResetTrigger("Walk");
         enemyAnim.SetTrigger("Idle");
-        
 
 
-
-        if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < playerRange)
+        if (!PlayerController.instance.paused)
         {
-            Vector3 playerDirection = PlayerController.instance.transform.position - transform.position;
-            zoombaController.Move(playerDirection * Time.deltaTime * speed);
+            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < playerRange)
+            {
+                Vector3 playerDirection = PlayerController.instance.transform.position - transform.position;
+                zoombaController.Move(playerDirection * Time.deltaTime * speed);
 
-            enemyAnim.SetTrigger("Walk");
-            enemyAnim.ResetTrigger("Idle");
-            
-
-            /*Gravità*/
-            playerFall.y = gravity * Time.deltaTime;
-            zoombaController.Move(playerFall * Time.deltaTime);
+                enemyAnim.SetTrigger("Walk");
+                enemyAnim.ResetTrigger("Idle");
 
 
-
-
+                /*Gravità*/
+                playerFall.y = gravity * Time.deltaTime;
+                zoombaController.Move(playerFall * Time.deltaTime);
+            }
         }
-       
-        
     }
 
     public void takeDamage(int damageAmount)
     {
-        health -= damageAmount;
-        if (health <= 0)
+        if (!PlayerController.instance.paused)
         {
-            Destroy(gameObject);
-            Instantiate(explosion, transform.position, transform.rotation);
+            health -= damageAmount;
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+                Instantiate(explosion, transform.position, transform.rotation);
 
-            AudioController.instance.PlayEnemyDeath();
+                AudioController.instance.PlayEnemyDeath();
+            }
         }
     }
 
     public void OnTriggerStay(Collider other)
     {
-        damageCounter -= Time.deltaTime;                          //ogni quanto può sparare il nemico
-        if (damageCounter <= 0)
+        if (!PlayerController.instance.paused)
         {
-            if (other.tag == "Player")
+            damageCounter -= Time.deltaTime;                          //ogni quanto può sparare il nemico
+            if (damageCounter <= 0)
             {
-                enemyAnim.ResetTrigger("Walk");
-                enemyAnim.ResetTrigger("Idle");
-                
+                if (other.tag == "Player")
+                {
+                    enemyAnim.ResetTrigger("Walk");
+                    enemyAnim.ResetTrigger("Idle");
 
-                PlayerController.instance.TakeDamage(damageAmount);
-              
+
+                    PlayerController.instance.TakeDamage(damageAmount);
+
+                }
+                damageCounter = damageRate;
             }
-            damageCounter = damageRate;
         }
-       
     }
 }
