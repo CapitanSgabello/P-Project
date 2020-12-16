@@ -457,6 +457,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 731618977}
+        m_MethodName: isNotPaused
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &51378557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7953,6 +7964,17 @@ MonoBehaviour:
       - m_Target: {fileID: 2119718022}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 731618977}
+        m_MethodName: isPaused
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -26509,7 +26531,9 @@ MonoBehaviour:
   currentAmmo: 50
   currentHealth: 0
   maxHealth: 100
+  hasDied: 0
   damageAmount: 1
+  paused: 0
   hitPoint: {fileID: 1664660372}
 --- !u!143 &731618978
 CharacterController:
@@ -45482,7 +45506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1738681108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45503,11 +45527,9 @@ MonoBehaviour:
   playerHurt: {fileID: 0}
   elevator: {fileID: 0}
   crystal: {fileID: 0}
-  enemyKey: {fileID: 0}
   key: {fileID: 0}
   menu: {fileID: 0}
   deathScreen: {fileID: 0}
-  steps: {fileID: 0}
 --- !u!4 &1738681109
 Transform:
   m_ObjectHideFlags: 0
