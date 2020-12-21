@@ -34,8 +34,6 @@ public class ArmabrilloScript : MonoBehaviour
         enemyAnim.SetTrigger("Idle");
         enemyAnim.ResetTrigger("Hit");
 
-        if (!PlayerController.instance.paused)
-        {
             if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < playerRange)
             {
                 Vector3 playerDirection = PlayerController.instance.transform.position - transform.position;
@@ -55,13 +53,10 @@ public class ArmabrilloScript : MonoBehaviour
             {
                 OnTriggerStay(other);
             }
-        }
     }
 
     public void takeDamage(int damageAmount)
     {
-        if (!PlayerController.instance.paused)
-        {
             health -= damageAmount;
             if (health <= 0)
             {
@@ -71,13 +66,10 @@ public class ArmabrilloScript : MonoBehaviour
 
                 AudioController.instance.PlayEnemyDeath();
             }
-        }
     }
 
     public void OnTriggerStay(Collider other)
     {
-        if (!PlayerController.instance.paused)
-        {
             damageCounter -= Time.deltaTime;                          //ogni quanto può sparare il nemico
             if (damageCounter <= 0)
             {
@@ -92,8 +84,5 @@ public class ArmabrilloScript : MonoBehaviour
                 }
                 damageCounter = damageRate;
             }
-        }
-
-
     }
 }

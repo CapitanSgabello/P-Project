@@ -26,8 +26,6 @@ public class PlantScript : MonoBehaviour
         plantAnim.SetTrigger("Idle");
         plantAnim.ResetTrigger("Attack");
 
-        if (!PlayerController.instance.paused)
-        {
             damageCounter -= Time.deltaTime;
 
             if ((Vector3.Distance(transform.position, PlayerController.instance.transform.position) < range) && (damageCounter <= 0))
@@ -38,13 +36,10 @@ public class PlantScript : MonoBehaviour
                 damageCounter = fireRate;
 
             }
-        } 
     }
 
     public void TakeDamage(int damageAmount)
     {
-        if (!PlayerController.instance.paused)
-        {
             health -= damageAmount;
             if (health <= 0)
             {
@@ -52,7 +47,6 @@ public class PlantScript : MonoBehaviour
                 Destroy(gameObject);
 
                 AudioController.instance.PlayEnemyDeath();
-            }
-        }
+            }   
     }
 }

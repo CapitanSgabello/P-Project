@@ -34,9 +34,6 @@ public class EnemyKey : MonoBehaviour
         enemyAnim.SetBool("Walk", false);                       //se il nemico è fermo bool walk = false e bool idle = true
         enemyAnim.SetBool("Idle", true);
 
-
-        if (!PlayerController.instance.paused)
-        {
             if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < playerRange)
             {
                 Vector3 playerDirection = PlayerController.instance.transform.position - transform.position;
@@ -49,15 +46,11 @@ public class EnemyKey : MonoBehaviour
                 playerFall.y = gravity * Time.deltaTime;
                 enemyController.Move(playerFall * Time.deltaTime);
 
-            }
-        }
-        
+            }        
     }
 
     public void takeDamage(int damageAmount)
     {
-        if (!PlayerController.instance.paused)
-        {
             health -= damageAmount;
             if (health <= 0)
             {
@@ -67,13 +60,10 @@ public class EnemyKey : MonoBehaviour
 
                 AudioController.instance.PlayEnemyDeath();
             }
-        }
     }
 
     public void OnTriggerStay(Collider other)
     {
-        if (!PlayerController.instance.paused)
-        {
             damageCounter -= Time.deltaTime;                          //ogni quanto può sparare il nemico
             if (damageCounter <= 0)
             {
@@ -82,7 +72,6 @@ public class EnemyKey : MonoBehaviour
                     PlayerController.instance.TakeDamage(damageAmount);
                 }
                 damageCounter = damageRate;
-            }
         }
 
     }

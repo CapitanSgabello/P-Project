@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 100;
     public bool hasDied;
     public int damageAmount;                        //danno arma
-    public bool paused;
 
     public Transform hitPoint;
 
@@ -75,7 +74,7 @@ public class PlayerController : MonoBehaviour
             gravityValue = gravity;
         }
 
-        if (!hasDied && !paused)
+        if (!hasDied)
         {
             Move();
             LookAround();
@@ -100,13 +99,6 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        /*  Vecchi Comandi di movimento
-        Vector2 movementDirection = new Vector2(joystickMove.Horizontal, joystickMove.Vertical)* moveSpeed* Time.deltaTime; 
-        Vector3 moveHorizontal = transform.up* -movementDirection.x;
-        Vector3 moveVertical = transform.right * movementDirection.y;
-        characterController.Move(moveHorizontal + moveVertical) ;
-        */
-
         /* Movimenti Del Giocatore */
         Vector3 moveInput = new Vector3(joystickMove.Horizontal, 0f, joystickMove.Vertical);
         Vector3 moveHorizontal = transform.forward * moveInput.z;
@@ -137,7 +129,7 @@ public class PlayerController : MonoBehaviour
 
     public void Fire()
     {
-        if (!hasDied && !paused)
+        if (!hasDied)
         {
             if (currentAmmo > 0)
             {
@@ -203,13 +195,5 @@ public class PlayerController : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
-    }
-    public void isPaused()
-    {
-        paused = true;
-    }
-    public void isNotPaused()
-    {
-        paused = false;
     }
 }

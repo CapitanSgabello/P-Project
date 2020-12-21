@@ -34,8 +34,6 @@ public class ZoombaScript : MonoBehaviour
         enemyAnim.SetTrigger("Idle");
 
 
-        if (!PlayerController.instance.paused)
-        {
             if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < playerRange)
             {
                 Vector3 playerDirection = PlayerController.instance.transform.position - transform.position;
@@ -49,13 +47,10 @@ public class ZoombaScript : MonoBehaviour
                 playerFall.y = gravity * Time.deltaTime;
                 zoombaController.Move(playerFall * Time.deltaTime);
             }
-        }
     }
 
     public void takeDamage(int damageAmount)
     {
-        if (!PlayerController.instance.paused)
-        {
             health -= damageAmount;
             if (health <= 0)
             {
@@ -64,13 +59,10 @@ public class ZoombaScript : MonoBehaviour
 
                 AudioController.instance.PlayEnemyDeath();
             }
-        }
     }
 
     public void OnTriggerStay(Collider other)
     {
-        if (!PlayerController.instance.paused)
-        {
             damageCounter -= Time.deltaTime;                          //ogni quanto può sparare il nemico
             if (damageCounter <= 0)
             {
@@ -85,6 +77,5 @@ public class ZoombaScript : MonoBehaviour
                 }
                 damageCounter = damageRate;
             }
-        }
     }
 }
