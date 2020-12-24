@@ -38,13 +38,13 @@ public class PlayerController : MonoBehaviour
 
     /* Variabili e costanti per lo sparo*/
     public GameObject bulletImpact;
-    public Animator gunAnim;
+    private Animator gunAnim;
     public int currentAmmo;
+    private int weaponDamage;
 
     public int currentHealth;
     public int maxHealth = 100;
     public bool hasDied;
-    public int damageAmount;                        //danno arma
 
     public Transform hitPoint;
 
@@ -142,34 +142,34 @@ public class PlayerController : MonoBehaviour
                     if (hit.transform.tag == "Zoomba")
                     {
 
-                        hit.transform.GetComponent<ZoombaScript>().takeDamage(damageAmount);
+                        hit.transform.GetComponent<ZoombaScript>().takeDamage(weaponDamage);
 
                     }
                     if (hit.transform.tag == "Armabrillo")
                     {
 
-                        hit.transform.GetComponent<ArmabrilloScript>().takeDamage(damageAmount);
+                        hit.transform.GetComponent<ArmabrilloScript>().takeDamage(weaponDamage);
 
                     }
                     if (hit.transform.tag == "EnemyKey")
                     {
-                        hit.transform.GetComponent<EnemyKey>().takeDamage(damageAmount);
+                        hit.transform.GetComponent<EnemyKey>().takeDamage(weaponDamage);
                     }
 
                     if (hit.transform.tag == "Crystal")
                     {
 
-                        hit.transform.GetComponent<CrystalScript>().TakeDamage(damageAmount);
+                        hit.transform.GetComponent<CrystalScript>().TakeDamage(weaponDamage);
                     }
                     if (hit.transform.tag == "Plant")
                     {
-                        hit.transform.GetComponent<PlantScript>().TakeDamage(damageAmount);
+                        hit.transform.GetComponent<PlantScript>().TakeDamage(weaponDamage);
                     }
 
                     AudioController.instance.PlayGunShot();
                 }
                 currentAmmo--;
-                gunAnim.SetTrigger("Shoot");
+                gunAnim.SetTrigger("shoot");
             }
         }
     }
@@ -195,5 +195,12 @@ public class PlayerController : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+    }
+
+    public void setWeapon(int dmg, int ammo, Animator anim)
+    {
+        weaponDamage = dmg;
+        currentAmmo = ammo;
+        gunAnim = anim;
     }
 }

@@ -23,7 +23,7 @@ public class AmmoPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            PlayerController.instance.currentAmmo += ammoAmount;
+            WeaponSwap.instance.handgunAmmo += ammoAmount;
 
             AudioController.instance.PlayAmmoPickup();
 
