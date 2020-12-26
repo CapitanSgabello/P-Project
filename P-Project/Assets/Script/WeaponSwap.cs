@@ -68,23 +68,71 @@ public class WeaponSwap : MonoBehaviour
         }
     }
 
-    public void setMelee()
+    private void setMelee()
     {
         PlayerController.instance.setWeapon(meleeDmg, 10, meleeAnim);
     }
 
-    public void setHandgun()
+    private void setHandgun()
     {
         PlayerController.instance.setWeapon(handgunDmg, handgunAmmo, handgunAnim);
     }
 
-    public void setShotgun()
+    private void setShotgun()
     {
         PlayerController.instance.setWeapon(shotgunDmg, shotgunAmmo, shotgunAnim);
     }
 
-    public void setMachinegun()
+    private void setMachinegun()
     {
         PlayerController.instance.setWeapon(machinegunDmg, machinegunAmmo, machinegunAnim);
+    }
+
+    public void ammoReduction()
+    {
+        if (handgunActive)
+        {
+            handgunAmmo--;
+        }
+        else if (shotgunActive)
+        {
+            shotgunAmmo--;
+        }
+        else if (machinegunActive)
+        {
+            machinegunAmmo--;
+        }
+    }
+
+    public void meleeActivation()
+    {
+        meleeActive = true;
+        handgunActive = false;
+        shotgunActive = false;
+        machinegunActive = false;
+    }
+
+    public void handgunActivation()
+    {
+        meleeActive = false;
+        handgunActive = true;
+        shotgunActive = false;
+        machinegunActive = false;
+    }
+
+    public void shotgunActivation()
+    {
+        meleeActive = false;
+        handgunActive = false;
+        shotgunActive = true;
+        machinegunActive = false;
+    }
+
+    public void machinegunActivation()
+    {
+        meleeActive = false;
+        handgunActive = false;
+        shotgunActive = false;
+        machinegunActive = true;
     }
 }
