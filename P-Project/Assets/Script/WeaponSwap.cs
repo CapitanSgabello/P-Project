@@ -36,11 +36,13 @@ public class WeaponSwap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
+
         meleeActive = false;
-        handgunActive = true;
+        handgunActive = false;
         handgunAmmo = 20;
-        shotgunActive = false;
-        shotgunAmmo = 0;
+        shotgunActive = true;
+        shotgunAmmo = 10;
         machinegunActive = false;
         machinegunAmmo = 0;
     }
