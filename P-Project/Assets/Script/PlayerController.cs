@@ -166,10 +166,10 @@ public class PlayerController : MonoBehaviour
                         hit.transform.GetComponent<PlantScript>().TakeDamage(weaponDamage);
                     }
 
-                    // AudioController.instance.PlayGunShot();
+                    AudioController.instance.PlayGunShot();
                 }
                 currentAmmo--;
-                gunAnim.SetTrigger("shoot");
+                gunAnim.SetTrigger("Shoot");
             }
         }
     }

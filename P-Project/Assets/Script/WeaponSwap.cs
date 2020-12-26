@@ -39,12 +39,12 @@ public class WeaponSwap : MonoBehaviour
         instance = this;
 
         meleeActive = false;
-        handgunActive = false;
+        handgunActive = true;
         handgunAmmo = 20;
-        shotgunActive = true;
+        shotgunActive = false;
         shotgunAmmo = 10;
         machinegunActive = false;
-        machinegunAmmo = 0;
+        machinegunAmmo = 20;
     }
 
     // Update is called once per frame
