@@ -9,28 +9,29 @@ public class WeaponSwap : MonoBehaviour
     public Animator meleeAnim;
     int meeleAmmo = 1;
     int meleeDmg = 2;
-    float meleeRof;
+    float meleeRof = 0.3f;
     private bool meleeActive;
+    
 
     public Animator handgunAnim;
     public int handgunAmmo;
     int handgunMaxAmmo = 150;
     int handgunDmg = 1;
-    float handgunRof;
+    float handgunRof = 0.2f;
     private bool handgunActive;
 
     public Animator shotgunAnim;
     public int shotgunAmmo;
     int shotgunMaxAmmo = 20;
     int shotgunDmg = 3;
-    float shotgunRof;
+    float shotgunRof = 0.5f;
     private bool shotgunActive;
 
     public Animator machinegunAnim;
     public int machinegunAmmo;
     int machingunMaxAmmo = 100;
     int machinegunDmg = 1;
-    float machinegunRof;
+    float machinegunRof = 0.05f;
     private bool machinegunActive;
 
     // Start is called before the first frame update
@@ -70,22 +71,22 @@ public class WeaponSwap : MonoBehaviour
 
     private void setMelee()
     {
-        PlayerController.instance.setWeapon(meleeDmg, 10, meleeAnim);
+        PlayerController.instance.setWeapon(meleeDmg, 10, meleeRof, meleeAnim);
     }
 
     private void setHandgun()
     {
-        PlayerController.instance.setWeapon(handgunDmg, handgunAmmo, handgunAnim);
+        PlayerController.instance.setWeapon(handgunDmg, handgunAmmo, handgunRof, handgunAnim);
     }
 
     private void setShotgun()
     {
-        PlayerController.instance.setWeapon(shotgunDmg, shotgunAmmo, shotgunAnim);
+        PlayerController.instance.setWeapon(shotgunDmg, shotgunAmmo, shotgunRof, shotgunAnim);
     }
 
     private void setMachinegun()
     {
-        PlayerController.instance.setWeapon(machinegunDmg, machinegunAmmo, machinegunAnim);
+        PlayerController.instance.setWeapon(machinegunDmg, machinegunAmmo, machinegunRof, machinegunAnim);
     }
 
     public void ammoReduction()

@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
     private Animator gunAnim;
     public int currentAmmo;
     private int weaponDamage;
+    private float weaponRoF;
+    private float rateOfFire;
 
     public int currentHealth;
     public int maxHealth = 100;
@@ -53,6 +55,8 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
         gravityValue = 0;
         elevatorSpeed = 170f;
+        weaponRoF = 0;
+        rateOfFire = 0;
     }
     private void Awake()
     {
@@ -61,7 +65,6 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-
         /* Impostazioni per l'Ascensore */
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, elevatorMask);
 
@@ -79,6 +82,8 @@ public class PlayerController : MonoBehaviour
             Move();
             LookAround();
         }
+
+        rateOfFire -= Time.deltaTime;
     }
 
     private void LookAround()
@@ -131,7 +136,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!hasDied)
         {
-            if (currentAmmo > 0)
+            if (currentAmmo > 0 && rateOfFire <= 0)
             {
                 Ray ray = viewCam.ViewportPointToRay(new Vector3(.5f, .5f, .0f));
                 RaycastHit hit;
@@ -170,6 +175,7 @@ public class PlayerController : MonoBehaviour
                 }
                 WeaponSwap.instance.ammoReduction();
                 gunAnim.SetTrigger("Shoot");
+                rateOfFire = weaponRoF;
             }
         }
     }
@@ -197,10 +203,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void setWeapon(int dmg, int ammo, Animator anim)
+    public void setWeapon(int dmg, int ammo, float RoF, Animator anim)
     {
         weaponDamage = dmg;
         currentAmmo = ammo;
         gunAnim = anim;
+        weaponRoF = RoF;
     }
 }
