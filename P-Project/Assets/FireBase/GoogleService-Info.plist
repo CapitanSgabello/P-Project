@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>702701546419-bvmfhs0bcm8nakbvu17e7tur1rn6ni6e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.702701546419-bvmfhs0bcm8nakbvu17e7tur1rn6ni6e</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAZXRIkj1Id5QbeelmHRreCa54Fs00j35w</string>
+	<key>GCM_SENDER_ID</key>
+	<string>702701546419</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.PProject.GameSlayer.iOS</string>
+	<key>PROJECT_ID</key>
+	<string>p-project-ba7af</string>
+	<key>STORAGE_BUCKET</key>
+	<string>p-project-ba7af.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:702701546419:ios:ac8b06fe4baaa9c76d39c6</string>
+</dict>
+</plist>
