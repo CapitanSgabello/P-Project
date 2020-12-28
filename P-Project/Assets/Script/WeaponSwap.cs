@@ -10,7 +10,7 @@ public class WeaponSwap : MonoBehaviour
     int meeleAmmo = 1;
     int meleeDmg = 2;
     float meleeRof = 0.3f;
-    private bool meleeActive;
+    public bool meleeActive;
     
 
     public Animator handgunAnim;

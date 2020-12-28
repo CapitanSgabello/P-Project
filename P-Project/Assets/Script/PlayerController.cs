@@ -142,8 +142,10 @@ public class PlayerController : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit))
                 {
-                    Instantiate(bulletImpact, hit.point, transform.rotation);
-
+                    if (!WeaponSwap.instance.meleeActive) 
+                    {
+                        Instantiate(bulletImpact, hit.point, transform.rotation);
+                    }
                     if (hit.transform.tag == "Zoomba")
                     {
 
@@ -171,7 +173,7 @@ public class PlayerController : MonoBehaviour
                         hit.transform.GetComponent<PlantScript>().TakeDamage(weaponDamage);
                     }
 
-                   // AudioController.instance.PlayGunShot();
+                    AudioController.instance.PlayGunShot();
                 }
                 WeaponSwap.instance.ammoReduction();
                 gunAnim.SetTrigger("Shoot");

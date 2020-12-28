@@ -284,49 +284,49 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Google.IOSResolver_v1.2.162">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.162.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.162.dll</HintPath>
     </Reference>
     <Reference Include="Google.JarResolver_v1.2.162">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.162.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.162.dll</HintPath>
     </Reference>
     <Reference Include="Google.PackageManagerResolver_v1.2.162">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.162.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.162.dll</HintPath>
     </Reference>
     <Reference Include="Google.VersionHandler">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
     </Reference>
     <Reference Include="Google.VersionHandlerImpl_v1.2.162">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.162.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.162.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Editor">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Firebase/Editor/Firebase.Editor.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Firebase/Editor/Firebase.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.App">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Auth">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Platform">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.TaskExtension">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
     </Reference>
     <Reference Include="Google.MiniJson">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Compat">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Tasks">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="SyntaxTree.Mono.Cecil">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/UnityVS/Editor/SyntaxTree.Mono.Cecil.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/UnityVS/Editor/SyntaxTree.Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -689,19 +689,19 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
