@@ -56,4 +56,9 @@ public class UIManager : MonoBehaviour
             confirm.SetActive(true);
         }
     }*/
+
+    public void reload()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
