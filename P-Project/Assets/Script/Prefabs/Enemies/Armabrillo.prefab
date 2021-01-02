@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4213995395219037986}
   - component: {fileID: 1271546243604677600}
   - component: {fileID: 4026358614343366274}
-  - component: {fileID: 8709662305036432960}
+  - component: {fileID: -4761281208422096471}
   m_Layer: 0
   m_Name: Armabrillo
-  m_TagString: Armabrillo
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8709662305036432960
+--- !u!114 &-4761281208422096471
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,21 +111,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1731075887803001548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c34cecd3a1aca1d4da79c7d79e7409cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c556532371702847a37d43d5510978d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyController: {fileID: 1271546243604677600}
-  explosion: {fileID: 5237569064193594892, guid: 8221d13dec8aff34da2888635bb38656,
-    type: 3}
+  enemyController: {fileID: 0}
+  death: {fileID: 0}
+  enemyAnim: {fileID: 0}
+  other: {fileID: 0}
+  bullet: {fileID: 0}
+  firePoint: {fileID: 0}
+  gravity: 0
   health: 3
   playerRange: 10
-  moveSpeed: 2
-  speed: 0.5
-  enemyAnim: {fileID: 3802872299394384911}
-  damageAmount: 2
-  damageRate: 0.5
-  other: {fileID: 0}
-  gravity: 0
+  moveSpeed: 0
+  speed: 0
+  damageAmount: 0
+  fireRate: 0.5
+  shouldShoot: 0
+  shouldHit: 0
+  normal: 0
 --- !u!1 &5324522346721988165
 GameObject:
   m_ObjectHideFlags: 0

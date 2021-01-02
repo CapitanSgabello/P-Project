@@ -124,10 +124,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1600760702457610650}
   - component: {fileID: 1600760702457610651}
-  - component: {fileID: 1600760702457610652}
+  - component: {fileID: 6023095218306687802}
   m_Layer: 0
   m_Name: Shy
-  m_TagString: Armabrillo
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,7 +165,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1600760702457610652
+--- !u!114 &6023095218306687802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,17 +174,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1600760702457610653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c34cecd3a1aca1d4da79c7d79e7409cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c556532371702847a37d43d5510978d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyController: {fileID: 1600760702457610651}
-  explosion: {fileID: 0}
+  enemyController: {fileID: 0}
+  death: {fileID: 0}
+  enemyAnim: {fileID: 0}
+  other: {fileID: 0}
+  bullet: {fileID: 0}
+  firePoint: {fileID: 0}
+  gravity: 0
   health: 3
   playerRange: 10
-  moveSpeed: 2
-  speed: 0.5
-  enemyAnim: {fileID: 1600760702428716093}
-  damageAmount: 2
-  damageRate: 0.5
-  other: {fileID: 0}
-  gravity: 0
+  moveSpeed: 0
+  speed: 0
+  damageAmount: 0
+  fireRate: 0.5
+  shouldShoot: 0
+  shouldHit: 0
+  normal: 0

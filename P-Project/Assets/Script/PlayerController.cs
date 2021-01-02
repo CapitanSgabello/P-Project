@@ -146,18 +146,7 @@ public class PlayerController : MonoBehaviour
                     {
                         Instantiate(bulletImpact, hit.point, transform.rotation);
                     }
-                    if (hit.transform.tag == "Zoomba")
-                    {
-
-                        hit.transform.GetComponent<ZoombaScript>().takeDamage(weaponDamage);
-
-                    }
-                    if (hit.transform.tag == "Armabrillo")
-                    {
-
-                        hit.transform.GetComponent<ArmabrilloScript>().takeDamage(weaponDamage);
-
-                    }
+                    
                     if (hit.transform.tag == "EnemyKey")
                     {
                         hit.transform.GetComponent<EnemyKey>().takeDamage(weaponDamage);
@@ -168,9 +157,10 @@ public class PlayerController : MonoBehaviour
 
                         hit.transform.GetComponent<CrystalScript>().TakeDamage(weaponDamage);
                     }
-                    if (hit.transform.tag == "Plant")
+                    
+                    if (hit.transform.tag == "Enemy")
                     {
-                        hit.transform.GetComponent<PlantScript>().TakeDamage(weaponDamage);
+                        hit.transform.GetComponent<EnemyController>().takeDamage(weaponDamage);
                     }
 
                     AudioController.instance.PlayGunShot();

@@ -7,9 +7,6 @@ TagManager:
   - Crystal
   - Enemy
   - EnemyKey
-  - Zoomba
-  - Armabrillo
-  - Plant
   layers:
   - Default
   - TransparentFX
