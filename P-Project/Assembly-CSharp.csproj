@@ -85,6 +85,7 @@
     <Compile Include="Assets\Script\Environment\LockedDoor_2.cs" />
     <Compile Include="Assets\Script\FPSCounter.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\Loading.cs" />
     <Compile Include="Assets\Script\LogoutButton.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
     <Compile Include="Assets\Script\MovimentoGiocatore\Base\Joystick.cs" />

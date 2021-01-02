@@ -24,13 +24,5 @@ public class SceneLoading : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
     }
-    private void Update()
-    {
-        time -= Time.deltaTime;
-        if(time <= 0)
-        {
-            loading.SetActive(false);
-            game.SetActive(true);
-        }
-    }
+    
 }
