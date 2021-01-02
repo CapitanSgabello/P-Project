@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MENU.unity
     guid: ba301d8c80d0bc240abdac7c1eac0f30
   - enabled: 1
-    path: Assets/Scenes/CaricamentoScena.unity
-    guid: d844206318f0ffa4e99d989a3c3a89b5
-  - enabled: 1
     path: Assets/Scenes/Castello.unity
     guid: 175ba4fceba99404cbbd6d68d0da194e
   m_configObjects: {}
