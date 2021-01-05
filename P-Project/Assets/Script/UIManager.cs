@@ -44,18 +44,30 @@ public class UIManager : MonoBehaviour
 
         //AudioController.instance.PlayMenu();
     }
-
-   /* public void ableDisableWarning()
+    public void playLevel2()
     {
-        if (warning.activeSelf)
-        {
-            confirm.SetActive(false);
-        }
-        else
-        {
-            confirm.SetActive(true);
-        }
-    }*/
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+
+        //AudioController.instance.PlayMenu();
+    }
+    public void playLevel3()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+
+        //AudioController.instance.PlayMenu();
+    }
+
+    /* public void ableDisableWarning()
+     {
+         if (warning.activeSelf)
+         {
+             confirm.SetActive(false);
+         }
+         else
+         {
+             confirm.SetActive(true);
+         }
+     }*/
 
     public void reload()
     {

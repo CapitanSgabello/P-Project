@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gameManageer : MonoBehaviour
 {
@@ -12,5 +13,10 @@ public class gameManageer : MonoBehaviour
     {
         Time.timeScale = 1;
         AudioListener.pause = false;
+    }
+
+    public void setMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
