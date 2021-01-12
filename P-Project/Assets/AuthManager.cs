@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Firebase;
+using Firebase.Database;
 using Firebase.Auth;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class AuthManager : MonoBehaviour
     public DependencyStatus dependencyStatus;
     public FirebaseAuth auth;
     public FirebaseUser User;
+    public DatabaseReference DBreference;
 
     //Login variables
     [Header("Login")]
@@ -25,6 +27,15 @@ public class AuthManager : MonoBehaviour
     public InputField passwordRegisterField;
     public InputField passwordRegisterVerifyField;
     public Text warningRegisterText;
+
+    //User Data variables
+    [Header("UserData")]
+    public InputField emailField;
+    public InputField level1Field;
+    public InputField level2Field;
+    public InputField level3Field;
+    public InputField level4Field;
+    public InputField level5Field;
 
     void Awake()
     {
@@ -49,6 +60,7 @@ public class AuthManager : MonoBehaviour
         Debug.Log("Setting up Firebase Auth");
         //Set the authentication instance object
         auth = FirebaseAuth.DefaultInstance;
+        DBreference = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
     //Function for the login button
@@ -93,9 +105,6 @@ public class AuthManager : MonoBehaviour
                 case AuthError.InvalidEmail:
                     message = "Invalid Email";
                     break;
-                case AuthError.UserNotFound:
-                    message = "Account does not exist";
-                    break;
             }
             warningLoginText.text = message;
         }
@@ -107,6 +116,11 @@ public class AuthManager : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
+
+            //yield return new WaitForSeconds(2);
+
+            //UIManager.instance.UserDataScreen(); // Change to user data UI
+            //confirmLoginText.text = "";
         }
     }
 
@@ -184,4 +198,40 @@ public class AuthManager : MonoBehaviour
             }
         }
     }
+    /*private IEnumerator UpdateUsernameAuth(string _email)
+    {
+        //Create a user profile and set the username
+        UserProfile profile = new UserProfile { DisplayName = _email };
+
+        //Call the Firebase auth update user profile function passing the profile with the username
+        var ProfileTask = User.UpdateUserProfileAsync(profile);
+        //Wait until the task completes
+        yield return new WaitUntil(predicate: () => ProfileTask.IsCompleted);
+
+        if (ProfileTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {ProfileTask.Exception}");
+        }
+        else
+        {
+            //Auth username is now updated
+        }
+    }
+
+    private IEnumerator UpdateUsernameDatabase(string _email)
+    {
+        //Set the currently logged in user username in the database
+        var DBTask = DBreference.Child("users").Child(User.UserId).Child("email").SetValueAsync(_email);
+
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else
+        {
+            //Database username is now updated
+        }
+    }*/
 }

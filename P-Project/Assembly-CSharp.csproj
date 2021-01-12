@@ -128,6 +128,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\SimplePixelUI\fonts\Font2\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-database-unity\maven-metadata.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
@@ -310,25 +311,28 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.App">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Auth">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Platform">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.TaskExtension">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
     </Reference>
     <Reference Include="Google.MiniJson">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Compat">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Tasks">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Assets/Firebase/Plugins/Firebase.Database.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -691,46 +695,46 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Notifications.iOS">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.Notifications.iOS.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/Unity.Notifications.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Notifications.Android">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.Notifications.Android.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/Unity.Notifications.Android.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mobile.AndroidLogcat.Editor">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.Mobile.AndroidLogcat.Editor.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/Unity.Mobile.AndroidLogcat.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/csant/Documents/GitHub/P-Project/P-Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/stefa/Documents/Unity/P-Project/P-Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
