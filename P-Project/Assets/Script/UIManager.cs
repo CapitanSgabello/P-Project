@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     //Screen object variables
     public GameObject loginUI;
     public GameObject registerUI;
+    public GameObject userDataUI;
     public GameObject warning;
     public GameObject confirm;
 
@@ -27,35 +28,60 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ClearScreen()
+    {
+        loginUI.SetActive(false);
+        registerUI.SetActive(false);
+        userDataUI.SetActive(false);
+    }
     //Functions to change the login screen UI
     public void LoginScreen() //Back button
     {
+        ClearScreen();
         loginUI.SetActive(true);
-        registerUI.SetActive(false);
     }
     public void RegisterScreen() // Regester button
     {
-        loginUI.SetActive(false);
+        ClearScreen();
         registerUI.SetActive(true);
     }
+    public void UserDataScreen()
+    {
+        ClearScreen();
+        userDataUI.SetActive(true);
+    }
+
     public void playGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         //AudioController.instance.PlayMenu();
     }
-
-   /* public void ableDisableWarning()
+   
+    public void playLevel2()
     {
-        if (warning.activeSelf)
-        {
-            confirm.SetActive(false);
-        }
-        else
-        {
-            confirm.SetActive(true);
-        }
-    }*/
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+
+        //AudioController.instance.PlayMenu();
+    }
+    public void playLevel3()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+
+        //AudioController.instance.PlayMenu();
+    }
+
+    /* public void ableDisableWarning()
+     {
+         if (warning.activeSelf)
+         {
+             confirm.SetActive(false);
+         }
+         else
+         {
+             confirm.SetActive(true);
+         }
+     }*/
 
     public void reload()
     {
