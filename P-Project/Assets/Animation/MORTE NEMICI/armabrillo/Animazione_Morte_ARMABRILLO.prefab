@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7077900511606970309}
   - component: {fileID: -1872744512853606028}
   - component: {fileID: -8394411866268558151}
+  - component: {fileID: 3897745170826192643}
   m_Layer: 0
   m_Name: Animazione_Morte_ARMABRILLO
   m_TagString: Untagged
@@ -116,6 +117,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &-8394411866268558151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4888258439993700263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6f75536589f594da1368e4743b9ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 0.9
+--- !u!114 &3897745170826192643
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

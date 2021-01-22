@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
     public bool shouldShoot;                                   //Nemico che spara
     public bool shouldHit;                                     //Nemico che colpisce
     public bool normal;                                        //Nemico normale
-
+    public bool stop;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,7 +65,7 @@ public class EnemyController : MonoBehaviour
             {
                 OnTriggerStay(other);
             }
-        }else if (shouldShoot)
+        }else if ((shouldShoot)&& (!stop))
         {
             enemyAnim.SetTrigger("Idle");
             enemyAnim.ResetTrigger("Attack");
@@ -103,6 +103,7 @@ public class EnemyController : MonoBehaviour
                 enemyFall.y = gravity * Time.deltaTime;
                 enemyController.Move(enemyFall * Time.deltaTime);
             }
+          
         }
         
     }//Fine update
@@ -140,6 +141,10 @@ public class EnemyController : MonoBehaviour
                 }
                 damageCounter = fireRate;
             }
+            if (PlayerController.instance.hasDied)
+            {
+                stop = true;
+            }
         }
         else if (shouldHit)
         {
@@ -156,6 +161,10 @@ public class EnemyController : MonoBehaviour
 
                 }
                 damageCounter = fireRate;
+            }
+            if (PlayerController.instance.hasDied)
+            {
+                stop = true;
             }
         }
     }

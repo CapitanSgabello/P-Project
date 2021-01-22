@@ -35,6 +35,7 @@ public class PlantBullet : MonoBehaviour
         {
             PlayerController.instance.TakeDamage(damageAmount);
         }
+        
         Destroy(gameObject);
     }
 }
