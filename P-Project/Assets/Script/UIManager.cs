@@ -13,13 +13,6 @@ public class UIManager : MonoBehaviour
     public GameObject registerUI;
     public GameObject warning;
     public GameObject confirm;
-    public AudioSource menuMusic;
-
-    void Start()
-    {
-        
-    
-    }
 
     private void Awake()
     {
@@ -48,7 +41,8 @@ public class UIManager : MonoBehaviour
     public void playGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        menuMusic.Stop();
+
+        //AudioController.instance.PlayMenu();
     }
 
    /* public void ableDisableWarning()

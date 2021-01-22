@@ -46,11 +46,10 @@ public class PlayerController : MonoBehaviour
 
     public int currentHealth;
     public int maxHealth = 100;
-    public bool hasDied=false;
+    public bool hasDied;
 
     public Transform hitPoint;
 
-    public AudioSource background;
     private void Start()
     {
         currentHealth = maxHealth;
@@ -179,19 +178,12 @@ public class PlayerController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-           // currentHealth = 0;
+            currentHealth = 0;
             deadScreen.SetActive(true);
             hasDied = true;
-           
-            
-        }
-        if (currentHealth == 0)
-        {
-            AudioController.instance.PlayPlayerHurt();
+            /*AudioController.instance.PlayPlayerHurt();*/
             AudioController.instance.PlayDeathScreen();
-            background.Stop();
         }
-        
     }
 
     public void addHealth(int healthAmount)
