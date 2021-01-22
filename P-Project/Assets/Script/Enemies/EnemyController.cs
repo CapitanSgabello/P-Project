@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
     public bool shouldShoot;                                   //Nemico che spara
     public bool shouldHit;                                     //Nemico che colpisce
     public bool normal;                                        //Nemico normale
-
+    public bool stop;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         gravity = -400f;
-        if (shouldHit)
+        if ((shouldHit)&&!(stop))
         {
             enemyAnim.ResetTrigger("Walk");
             enemyAnim.SetTrigger("Idle");
@@ -65,7 +65,7 @@ public class EnemyController : MonoBehaviour
             {
                 OnTriggerStay(other);
             }
-        }else if (shouldShoot)
+        }else if ((shouldShoot)&&!(stop))
         {
             enemyAnim.SetTrigger("Idle");
             enemyAnim.ResetTrigger("Attack");
@@ -84,7 +84,7 @@ public class EnemyController : MonoBehaviour
                 enemyController.Move(enemyFall * Time.deltaTime);
 
             }
-        }else if (normal)
+        }else if ((normal)&& !(stop))
         {
             enemyAnim.ResetTrigger("Walk");
             enemyAnim.SetTrigger("Idle");
@@ -136,7 +136,10 @@ public class EnemyController : MonoBehaviour
 
 
                     PlayerController.instance.TakeDamage(damageAmount);
-
+                    if (PlayerController.instance.hasDied)
+                    {
+                        stop = true;
+                    }
                 }
                 damageCounter = fireRate;
             }
@@ -153,7 +156,10 @@ public class EnemyController : MonoBehaviour
                     enemyAnim.SetTrigger("Hit");
 
                     PlayerController.instance.TakeDamage(damageAmount);
-
+                    if (PlayerController.instance.hasDied)
+                    {
+                        stop = true;
+                    }
                 }
                 damageCounter = fireRate;
             }

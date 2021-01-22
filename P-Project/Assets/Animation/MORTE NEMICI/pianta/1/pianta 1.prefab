@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3555621776550160080}
   - component: {fileID: 3555621776550160087}
   - component: {fileID: 3555621776550160086}
+  - component: {fileID: -4598248493430561364}
   m_Layer: 0
   m_Name: pianta 1
   m_TagString: Untagged
@@ -101,3 +102,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-4598248493430561364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555621776550160085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6f75536589f594da1368e4743b9ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 0.9
