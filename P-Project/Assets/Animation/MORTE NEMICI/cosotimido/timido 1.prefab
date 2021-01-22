@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6003001718515826592}
   - component: {fileID: 1247536619693697560}
   - component: {fileID: 4794880430492128186}
+  - component: {fileID: -4570576565655526255}
   m_Layer: 0
   m_Name: timido 1
   m_TagString: Untagged
@@ -128,3 +129,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a6ba464c0cea4448c535a602125394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4570576565655526255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108226012181262436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6f75536589f594da1368e4743b9ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 0.9
