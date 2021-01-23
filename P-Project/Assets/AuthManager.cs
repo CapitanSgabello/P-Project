@@ -117,10 +117,10 @@ public class AuthManager : MonoBehaviour
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
 
-            //yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(2);
 
-            //UIManager.instance.UserDataScreen(); // Change to user data UI
-            //confirmLoginText.text = "";
+            UIManager.instance.MenuScreen(); // Change to user data UI
+            confirmLoginText.text = "";
         }
     }
 
