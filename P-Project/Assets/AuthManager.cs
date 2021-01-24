@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class AuthManager : MonoBehaviour
 {
+    public GameObject level2;
+
     //Firebase variables
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
@@ -53,6 +55,14 @@ public class AuthManager : MonoBehaviour
                 Debug.LogError("Could not resolve all Firebase dependencies: " + dependencyStatus);
             }
         });
+    }
+
+    public void Start()
+    {
+        if(PlayerPrefs.GetInt("levels complete") == 1)
+        {
+            level2.SetActive(false);
+        }
     }
 
     private void InitializeFirebase()
@@ -116,6 +126,8 @@ public class AuthManager : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
+
+            //DBreference.Child("users").Child(userId).Child("username").SetValueAsync(name);
 
             yield return new WaitForSeconds(2);
 

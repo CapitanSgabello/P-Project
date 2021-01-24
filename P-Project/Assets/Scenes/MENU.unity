@@ -4341,6 +4341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ab17f2260de564cae0b25c4e454d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level2: {fileID: 3339709127351002565}
   dependencyStatus: 0
   emailLoginField: {fileID: 1030325525}
   passwordLoginField: {fileID: 21031323}
@@ -8077,7 +8078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2045362565
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9021,7 +9022,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!222 &3339709126637919882
 CanvasRenderer:
@@ -9211,7 +9212,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &3339709126666636477
 RectTransform:
@@ -9821,7 +9822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &3339709127394372362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9939,7 +9940,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!222 &3339709127563904244
 CanvasRenderer:
@@ -10036,7 +10037,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &3339709127789458113
 RectTransform:

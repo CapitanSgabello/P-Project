@@ -24,7 +24,7 @@ public class CrystalScript : MonoBehaviour
         if (health <= 0)
         {
             open = true;
-
+            PlayerPrefs.SetInt("levels complete",1);
             AudioController.instance.PlayCrystal();
         }
     }
