@@ -147,6 +147,7 @@ public class PlayerController : MonoBehaviour
                     if (!WeaponSwap.instance.meleeActive) 
                     {
                         Instantiate(bulletImpact, hit.point, transform.rotation);
+                        rateOfFire = 3;
                     }
                     
                     if (hit.transform.tag == "EnemyKey")
@@ -165,7 +166,13 @@ public class PlayerController : MonoBehaviour
                         hit.transform.GetComponent<EnemyController>().takeDamage(weaponDamage);
                     }
 
-                    AudioController.instance.PlayGunShot();
+                    if  (WeaponSwap.instance.meleeActive)
+                    AudioController.instance.PlayAxeHit();
+
+                    else
+                        AudioController.instance.PlayGunShot();
+
+
                 }
                 WeaponSwap.instance.ammoReduction();
                 gunAnim.SetTrigger("Shoot");
