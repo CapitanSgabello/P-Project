@@ -165,7 +165,10 @@ public class PlayerController : MonoBehaviour
                         hit.transform.GetComponent<EnemyController>().takeDamage(weaponDamage);
                     }
 
-                    AudioController.instance.PlayGunShot();
+                    if (WeaponSwap.instance.meleeActive)
+                        AudioController.instance.PlayAscia();
+                    else
+                        AudioController.instance.PlayGunShot();
                 }
                 WeaponSwap.instance.ammoReduction();
                 gunAnim.SetTrigger("Shoot");
