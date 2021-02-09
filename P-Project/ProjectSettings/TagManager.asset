@@ -7,7 +7,6 @@ TagManager:
   - Crystal
   - Enemy
   - EnemyKey
-  - ascia
   layers:
   - Default
   - TransparentFX

@@ -137,8 +137,7 @@ public class PlayerController : MonoBehaviour
     public void Fire()
     {
         if (!hasDied)
-        {   
-
+        {
             if (currentAmmo > 0 && rateOfFire <= 0)
             {
                 Ray ray = viewCam.ViewportPointToRay(new Vector3(.5f, .5f, .0f));
@@ -148,7 +147,7 @@ public class PlayerController : MonoBehaviour
                     if (!WeaponSwap.instance.meleeActive) 
                     {
                         Instantiate(bulletImpact, hit.point, transform.rotation);
-                        
+                        rateOfFire = 3;
                     }
                     
                     if (hit.transform.tag == "EnemyKey")
