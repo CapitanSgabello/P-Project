@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
     private int weaponDamage;
     private float weaponRoF;
     private float rateOfFire;
+    public static float range =1.5f;        //Distanza colpo ascia
+    
 
     public int currentHealth;
     public int maxHealth = 100;
@@ -137,18 +139,42 @@ public class PlayerController : MonoBehaviour
     public void Fire()
     {
         if (!hasDied)
-        {
-            if (currentAmmo > 0 && rateOfFire <= 0)
+        { if (WeaponSwap.instance.meleeActive)           //Se l'arma è l'ascia           
+                
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(viewCam.transform.position, viewCam.transform.forward, out hit, range)) { 
+
+                    if (Physics.Raycast(viewCam.transform.position, viewCam.transform.forward, out hit, range))
+                    {
+                        if (hit.transform.tag == "Enemy")
+                        
+                            hit.transform.GetComponent<EnemyController>().takeDamage(weaponDamage);
+
+                        if (hit.transform.tag == "EnemyKey")
+                        
+                            hit.transform.GetComponent<EnemyKey>().takeDamage(weaponDamage);
+                        
+
+                    }
+
+                }
+                WeaponSwap.instance.ammoReduction();
+                gunAnim.SetTrigger("Shoot");
+                rateOfFire = weaponRoF;
+                AudioController.instance.PlayAscia();
+            }
+            else if (currentAmmo > 0 && rateOfFire <= 0)            //Se l'arma non è l'ascia
             {
                 Ray ray = viewCam.ViewportPointToRay(new Vector3(.5f, .5f, .0f));
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit))
                 {
-                    if (!WeaponSwap.instance.meleeActive) 
+                    if (!WeaponSwap.instance.meleeActive)
                     {
                         Instantiate(bulletImpact, hit.point, transform.rotation);
                     }
-                    
+
                     if (hit.transform.tag == "EnemyKey")
                     {
                         hit.transform.GetComponent<EnemyKey>().takeDamage(weaponDamage);
@@ -159,16 +185,13 @@ public class PlayerController : MonoBehaviour
 
                         hit.transform.GetComponent<CrystalScript>().TakeDamage(weaponDamage);
                     }
-                    
+
                     if (hit.transform.tag == "Enemy")
                     {
                         hit.transform.GetComponent<EnemyController>().takeDamage(weaponDamage);
                     }
 
-                    if (WeaponSwap.instance.meleeActive)
-                        AudioController.instance.PlayAscia();
-                    else
-                        AudioController.instance.PlayGunShot();
+                    AudioController.instance.PlayGunShot();
                 }
                 WeaponSwap.instance.ammoReduction();
                 gunAnim.SetTrigger("Shoot");
