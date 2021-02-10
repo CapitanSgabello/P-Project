@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PlayFab.ClientModels;
+using PlayFab;
 
 public class CrystalScript : MonoBehaviour
 {
@@ -24,7 +26,7 @@ public class CrystalScript : MonoBehaviour
         if (health <= 0)
         {
             open = true;
-            PlayerPrefs.SetInt("levels complete",1);
+            saveLevelCompleted();
             AudioController.instance.PlayCrystal();
         }
     }
@@ -33,5 +35,27 @@ public class CrystalScript : MonoBehaviour
     public bool GetBool()
     {
         return open;
+    }
+
+    public void saveLevelCompleted()
+    {
+        var request = new UpdateUserDataRequest
+        {
+            Data = new Dictionary<string, string>
+            {
+                {"level 1","completed"}
+            }
+        };
+
+        PlayFabClientAPI.UpdateUserData(request, OnDataSent, onError);
+    }
+
+    void OnDataSent(UpdateUserDataResult result)
+    {
+
+    }
+    void onError(PlayFabError error)
+    {
+
     }
 }
