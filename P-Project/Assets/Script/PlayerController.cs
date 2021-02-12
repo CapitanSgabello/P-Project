@@ -44,7 +44,8 @@ public class PlayerController : MonoBehaviour
     private float weaponRoF;
     private float rateOfFire;
     public static float range =1.5f;        //Distanza colpo ascia
-    
+    private float fireRate = 0.5f;
+    private float nextFire = 0.0f;
 
     public int currentHealth;
     public int maxHealth = 100;
@@ -143,26 +144,29 @@ public class PlayerController : MonoBehaviour
                 
             {
                 RaycastHit hit;
-                if (Physics.Raycast(viewCam.transform.position, viewCam.transform.forward, out hit, range)) { 
+                if (Physics.Raycast(viewCam.transform.position, viewCam.transform.forward, out hit, range) && (Time.time > nextFire))
+                {
+                    nextFire = Time.time + fireRate / 2;
 
-                    if (Physics.Raycast(viewCam.transform.position, viewCam.transform.forward, out hit, range))
-                    {
-                        if (hit.transform.tag == "Enemy")
-                        
-                            hit.transform.GetComponent<EnemyController>().takeDamage(weaponDamage);
+                    if (hit.transform.tag == "Enemy")
 
-                        if (hit.transform.tag == "EnemyKey")
-                        
-                            hit.transform.GetComponent<EnemyKey>().takeDamage(weaponDamage);
-                        
+                        hit.transform.GetComponent<EnemyController>().takeDamage(weaponDamage);
 
-                    }
+                    if (hit.transform.tag == "EnemyKey")
 
+                        hit.transform.GetComponent<EnemyKey>().takeDamage(weaponDamage);
+
+                    gunAnim.SetTrigger("Shoot");
+                    AudioController.instance.PlayAscia();
                 }
-                WeaponSwap.instance.ammoReduction();
-                gunAnim.SetTrigger("Shoot");
-                rateOfFire = weaponRoF;
-                AudioController.instance.PlayAscia();
+                else
+                    if (Time.time > nextFire)
+                {
+
+                    nextFire = Time.time + fireRate / 2;
+                    gunAnim.SetTrigger("Shoot");
+                    AudioController.instance.PlayAscia();
+                }
             }
             else if (currentAmmo > 0 && rateOfFire <= 0)            //Se l'arma non è l'ascia
             {
