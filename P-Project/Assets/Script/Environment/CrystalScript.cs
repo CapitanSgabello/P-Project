@@ -26,7 +26,6 @@ public class CrystalScript : MonoBehaviour
         if (health <= 0)
         {
             open = true;
-            saveLevelCompleted();
             AudioController.instance.PlayCrystal();
         }
     }
@@ -35,27 +34,5 @@ public class CrystalScript : MonoBehaviour
     public bool GetBool()
     {
         return open;
-    }
-
-    public void saveLevelCompleted()
-    {
-        var request = new UpdateUserDataRequest
-        {
-            Data = new Dictionary<string, string>
-            {
-                {"level 1","completed"}
-            }
-        };
-
-        PlayFabClientAPI.UpdateUserData(request, OnDataSent, onError);
-    }
-
-    void OnDataSent(UpdateUserDataResult result)
-    {
-
-    }
-    void onError(PlayFabError error)
-    {
-
     }
 }
