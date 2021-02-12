@@ -75,11 +75,12 @@ MonoBehaviour:
   playerRange: 0
   moveSpeed: 0
   speed: 0
-  damageAmount: 3
+  damageAmount: 10
   fireRate: 0.5
   shouldShoot: 1
   shouldHit: 0
   normal: 0
+  stop: 0
 --- !u!1 &1945687197881184263
 GameObject:
   m_ObjectHideFlags: 0
