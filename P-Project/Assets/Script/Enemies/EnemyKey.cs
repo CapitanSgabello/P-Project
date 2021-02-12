@@ -59,6 +59,7 @@ public class EnemyKey : MonoBehaviour
                 Instantiate(explosion, transform.position, transform.rotation);
 
                 AudioController.instance.PlayEnemyDeath();
+                AudioController.instance.PlayPorte();
             }
     }
 

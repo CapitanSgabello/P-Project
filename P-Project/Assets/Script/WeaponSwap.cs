@@ -12,6 +12,7 @@ public class WeaponSwap : MonoBehaviour
     float meleeRof = 0.3f;
     public bool meleeActive;
     
+    
 
     public Animator handgunAnim;
     public int handgunAmmo;
@@ -71,7 +72,7 @@ public class WeaponSwap : MonoBehaviour
 
     private void setMelee()
     {
-        PlayerController.instance.setWeapon(meleeDmg, 10, meleeRof, meleeAnim);
+        PlayerController.instance.setWeapon(meleeDmg, meeleAmmo, meleeRof, meleeAnim);
     }
 
     private void setHandgun()
