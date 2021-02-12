@@ -8,7 +8,7 @@ public class AudioController : MonoBehaviour
 {
     public static AudioController instance;
 
-    public AudioSource ammo, enemyDeath, enemyShot, gunShot, health, playerHurt, elevator, crystal, key, deathScreen, ascia;
+    public AudioSource ammo, enemyDeath, enemyShot, gunShot, health, playerHurt, elevator, crystal, key, deathScreen, ascia, porte;
 
     private void Awake()
     {
@@ -96,5 +96,13 @@ public class AudioController : MonoBehaviour
         ascia.Stop();
         ascia.Play();
     
+    }
+
+    public void PlayPorte()
+    {
+
+        porte.Stop();
+        porte.Play();
+
     }
 }

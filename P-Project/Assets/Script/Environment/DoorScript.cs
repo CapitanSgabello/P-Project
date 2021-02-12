@@ -24,10 +24,13 @@ using UnityEngine;
         {
             if (shouldOpen && (doorModel.position.y != posMax) )
             {
+
                 doorModel.position = Vector3.MoveTowards(doorModel.position, new Vector3(doorModel.position.x, posMax, doorModel.position.z), openSpeed * Time.deltaTime);
                 if (doorModel.position.y == posMax)
                 {
-                    doorCollider.SetActive(false);
+                
+                doorCollider.SetActive(false);
+                
                 }
             }
             else if (!shouldOpen && (doorModel.position.y != posMin))
@@ -45,7 +48,8 @@ using UnityEngine;
             if (other.tag == "Player")
             {
                 shouldOpen = true;
-            }
+            AudioController.instance.PlayPorte();
+        }
         }
 
         private void OnTriggerExit(Collider other)
