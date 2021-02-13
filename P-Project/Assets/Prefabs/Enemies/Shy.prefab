@@ -164,7 +164,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.05, y: 0, z: 0}
 --- !u!114 &6023095218306687802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   bullet: {fileID: 0}
   firePoint: {fileID: 0}
   gravity: 0
-  health: 3
+  health: 4
   playerRange: 10
   moveSpeed: 2
   speed: 0.5
