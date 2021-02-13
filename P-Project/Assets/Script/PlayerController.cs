@@ -156,7 +156,11 @@ public class PlayerController : MonoBehaviour
 
                         hit.transform.GetComponent<EnemyKey>().takeDamage(weaponDamage);
 
-                    gunAnim.SetTrigger("Shoot");
+                    if (hit.transform.tag == "Crystal")
+                    
+                        hit.transform.GetComponent<CrystalScript>().TakeDamage(weaponDamage);
+
+                        gunAnim.SetTrigger("Shoot");
                     AudioController.instance.PlayAscia();
                 }
                 else
