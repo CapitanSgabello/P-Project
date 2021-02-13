@@ -81,6 +81,7 @@
     <Compile Include="Assets\Script\Environment\CrystalScript.cs" />
     <Compile Include="Assets\Script\Environment\Door&amp;ButtonScript.cs" />
     <Compile Include="Assets\Script\Environment\DoorScript.cs" />
+    <Compile Include="Assets\Script\Environment\Floor_Trap.cs" />
     <Compile Include="Assets\Script\Environment\LockedDoor.cs" />
     <Compile Include="Assets\Script\Environment\LockedDoor_2.cs" />
     <Compile Include="Assets\Script\FPSCounter.cs" />

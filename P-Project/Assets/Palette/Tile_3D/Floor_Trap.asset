@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: T_Floor_1
+  m_Name: Floor_Trap
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: 8d403ca9b32396640822aef4a533e27e, type: 3}
-  m_DefaultGameObject: {fileID: 6257383490486414643, guid: 328d2887f9e071e4892bbcb932f018f8,
+  m_DefaultSprite: {fileID: 21300000, guid: 7e7052266b6515244a8acfce02fbcfb2, type: 3}
+  m_DefaultGameObject: {fileID: 1026760525492272172, guid: 592e98a708c24054aa0321f4af7a5231,
     type: 3}
   m_DefaultColliderType: 1
   m_TilingRules: []
