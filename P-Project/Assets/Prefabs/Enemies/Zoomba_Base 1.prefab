@@ -236,7 +236,7 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   gravity: 0
   health: 3
-  playerRange: 0
+  playerRange: 10
   moveSpeed: 2
   speed: 0.5
   damageAmount: 1
@@ -244,3 +244,4 @@ MonoBehaviour:
   shouldShoot: 0
   shouldHit: 0
   normal: 1
+  stop: 0

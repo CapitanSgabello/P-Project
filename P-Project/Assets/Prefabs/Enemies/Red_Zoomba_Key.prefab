@@ -71,7 +71,7 @@ MonoBehaviour:
   moveSpeed: 2
   speed: 0.5
   enemyAnim: {fileID: 8978025332647952332}
-  damageAmount: 4
+  damageAmount: 5
   damageRate: 0.5
   doorLocked: {fileID: 0}
   gravity: -800

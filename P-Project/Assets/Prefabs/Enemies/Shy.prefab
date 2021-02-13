@@ -177,19 +177,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c556532371702847a37d43d5510978d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyController: {fileID: 0}
-  death: {fileID: 0}
-  enemyAnim: {fileID: 0}
+  enemyController: {fileID: 1600760702457610651}
+  death: {fileID: 108226012181262436, guid: 5ce4dbb415befe941985e0075980d30a, type: 3}
+  enemyAnim: {fileID: 1600760702428716093}
   other: {fileID: 0}
   bullet: {fileID: 0}
   firePoint: {fileID: 0}
   gravity: 0
   health: 3
   playerRange: 10
-  moveSpeed: 0
-  speed: 0
-  damageAmount: 0
+  moveSpeed: 2
+  speed: 0.5
+  damageAmount: 3
   fireRate: 0.5
   shouldShoot: 0
-  shouldHit: 0
+  shouldHit: 1
   normal: 0
+  stop: 0

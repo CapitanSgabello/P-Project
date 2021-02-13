@@ -75,7 +75,7 @@ MonoBehaviour:
   playerRange: 0
   moveSpeed: 0
   speed: 0
-  damageAmount: 10
+  damageAmount: 4
   fireRate: 0.5
   shouldShoot: 1
   shouldHit: 0
