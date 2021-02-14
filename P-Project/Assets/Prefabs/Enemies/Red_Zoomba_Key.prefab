@@ -45,12 +45,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 1.04
+  m_Radius: 1.2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!114 &8978025332261155600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,10 +66,10 @@ MonoBehaviour:
   enemyController: {fileID: 8978025332261155601}
   explosion: {fileID: 6089674534642855384, guid: 0563c1daba3d10843bc3017c93d7fc67,
     type: 3}
-  health: 3
+  health: 10
   playerRange: 10
   moveSpeed: 2
-  speed: 0.5
+  speed: 0.4
   enemyAnim: {fileID: 8978025332647952332}
   damageAmount: 5
   damageRate: 0.5
