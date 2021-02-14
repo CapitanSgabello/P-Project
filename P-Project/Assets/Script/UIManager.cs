@@ -11,8 +11,9 @@ public class UIManager : MonoBehaviour
     //Screen object variables
     public GameObject loginUI;
     public GameObject registerUI;
-    public GameObject userDataUI;
     public GameObject mainMenuUI;
+    public GameObject levelsMenuUI;
+    public GameObject creditsMenuUI;
     public GameObject warning;
     public GameObject confirm;
     public AudioSource menuMusic;
@@ -34,7 +35,8 @@ public class UIManager : MonoBehaviour
     {
         loginUI.SetActive(false);
         registerUI.SetActive(false);
-        userDataUI.SetActive(false);
+        levelsMenuUI.SetActive(false);
+        creditsMenuUI.SetActive(false);
     }
     //Functions to change the login screen UI
     public void LoginScreen() //Back button
@@ -47,12 +49,6 @@ public class UIManager : MonoBehaviour
         ClearScreen();
         registerUI.SetActive(true);
     }
-    public void UserDataScreen()
-    {
-        ClearScreen();
-        userDataUI.SetActive(true);
-    }
-
     public void MenuScreen() 
     {
         ClearScreen();
@@ -62,35 +58,16 @@ public class UIManager : MonoBehaviour
     public void playGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-        
     }
    
     public void playLevel2()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-
-        
     }
     public void playLevel3()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
-
-        
     }
-
-    /* public void ableDisableWarning()
-     {
-         if (warning.activeSelf)
-         {
-             confirm.SetActive(false);
-         }
-         else
-         {
-             confirm.SetActive(true);
-         }
-     }*/
-
     public void reload()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

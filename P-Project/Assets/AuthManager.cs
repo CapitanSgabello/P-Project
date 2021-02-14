@@ -27,6 +27,18 @@ public class AuthManager : MonoBehaviour
     public GameObject L2locked;
     public GameObject L3locked;
 
+    public GameObject homeButton;
+
+    public void Start()
+    {
+        if (PlayFabClientAPI.IsClientLoggedIn())
+        {
+            UIManager.instance.MenuScreen();
+            homeButton.SetActive(true);
+            getLevelCompleted();
+        }
+    }
+
     public void registerButton()
     {
         if(passwordRegisterField.text.Length < 6)
@@ -39,11 +51,11 @@ public class AuthManager : MonoBehaviour
             Password = passwordRegisterField.text,
             RequireBothUsernameAndEmail = false
     };
-        PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
+        PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnRegisterError);
         UIManager.instance.MenuScreen();
     }
 
-    private void OnError(PlayFabError error)
+    private void OnRegisterError(PlayFabError error)
     {
         warningRegisterText.text = error.ErrorMessage;
     }
@@ -51,6 +63,7 @@ public class AuthManager : MonoBehaviour
     {
         warningRegisterText.text = "Registered!";
         UIManager.instance.MenuScreen();
+        homeButton.SetActive(true);
     }
     public void LoginButton()
     {
@@ -59,7 +72,7 @@ public class AuthManager : MonoBehaviour
             Email = emailLoginField.text,
             Password = passwordLoginField.text
         };
-        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
+        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnLoginError);
     }
 
     private void OnLoginSuccess(LoginResult result)
@@ -67,11 +80,22 @@ public class AuthManager : MonoBehaviour
         confirmLoginText.text = "Logged in!";
         getLevelCompleted();
         UIManager.instance.MenuScreen();
+        homeButton.SetActive(true);
+    }
+
+    public void OnLoginError(PlayFabError error)
+    {
+        warningLoginText.text = error.ErrorMessage;
     }
 
     public void getLevelCompleted()
     {
         PlayFabClientAPI.GetUserData(new GetUserDataRequest(), OnDataRecived, OnError);
+    }
+
+    public void OnError(PlayFabError error)
+    {
+
     }
 
     private void OnDataRecived(GetUserDataResult result)
