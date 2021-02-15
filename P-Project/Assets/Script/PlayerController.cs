@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     /*Variabili e costanti d'istanza*/
@@ -15,7 +16,8 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
 
     /*Variabili e costanti per la visuale*/
-    public float sensibility;
+    public float sensitivity;
+    public Slider sensitivitySlider;
     public Joystick joystickVisual;
     private Vector2 lookInput;
     private float cameraVertical;
@@ -93,7 +95,7 @@ public class PlayerController : MonoBehaviour
 
     private void LookAround()
     {
-        lookInput = new Vector2(joystickVisual.Horizontal, joystickVisual.Vertical) * sensibility * Time.deltaTime;
+        lookInput = new Vector2(joystickVisual.Horizontal, joystickVisual.Vertical) * sensitivity * Time.deltaTime;
 
         /*Rotazione verticale*/
         cameraVertical = Mathf.Clamp(lookInput.y, minAngleVisual, maxAngleVisual);
@@ -102,9 +104,14 @@ public class PlayerController : MonoBehaviour
         /*Rotazione orizzontale*/
         transform.Rotate(transform.up, lookInput.x);
     }
-    public void modifySensibity()
+    public void ChangeSensitivity(float sensitivity)
     {
-        sensibility += 50;
+        this.sensitivity = sensitivity;
+    }
+
+    public void ApplySensitivity()
+    {
+        ChangeSensitivity(sensitivitySlider.value * 500);
     }
 
     private void Move()
