@@ -251,4 +251,14 @@ public class PlayerController : MonoBehaviour
         gunAnim = anim;
         weaponRoF = RoF;
     }
+
+    public void pauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void resumeGame()
+    {
+        Time.timeScale = 1;
+    }
 }

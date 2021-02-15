@@ -74272,6 +74272,26 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 731618977}
+    - target: {fileID: 1143604526310004285, guid: 7d63184b5e5fdab4ebfa9d133f1e316d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143604526310004285, guid: 7d63184b5e5fdab4ebfa9d133f1e316d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 731618977}
+    - target: {fileID: 1143604526310004285, guid: 7d63184b5e5fdab4ebfa9d133f1e316d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: resumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143604526310004285, guid: 7d63184b5e5fdab4ebfa9d133f1e316d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1143604526358924625, guid: 7d63184b5e5fdab4ebfa9d133f1e316d,
         type: 3}
       propertyPath: m_Name
@@ -78552,6 +78572,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2119718022}
+    - target: {fileID: 4029522970155729263, guid: 57015d94f8255a04494d1f365e78e598,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029522970155729263, guid: 57015d94f8255a04494d1f365e78e598,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 731618977}
+    - target: {fileID: 4029522970155729263, guid: 57015d94f8255a04494d1f365e78e598,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: pauseGame
+      objectReference: {fileID: 0}
     - target: {fileID: 4949458738062897285, guid: 57015d94f8255a04494d1f365e78e598,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -78682,6 +78717,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 65758178}
+    - target: {fileID: 4949458738383053060, guid: 57015d94f8255a04494d1f365e78e598,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 731618977}
+    - target: {fileID: 4949458738383053060, guid: 57015d94f8255a04494d1f365e78e598,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: pauseGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57015d94f8255a04494d1f365e78e598, type: 3}
 --- !u!4 &4988640353984217776
@@ -80346,6 +80391,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
       objectReference: {fileID: 301439734}
+    - target: {fileID: 6076419962777981574, guid: c45654d545692f7498fed9b76fbffd84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 731618977}
+    - target: {fileID: 6076419962777981574, guid: c45654d545692f7498fed9b76fbffd84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: resumeGame
+      objectReference: {fileID: 0}
     - target: {fileID: 6076419962974770258, guid: c45654d545692f7498fed9b76fbffd84,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -80376,6 +80431,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
       objectReference: {fileID: 301439734}
+    - target: {fileID: 6076419962974770258, guid: c45654d545692f7498fed9b76fbffd84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 731618977}
+    - target: {fileID: 6076419962974770258, guid: c45654d545692f7498fed9b76fbffd84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: resumeGame
+      objectReference: {fileID: 0}
     - target: {fileID: 6076419963030285384, guid: c45654d545692f7498fed9b76fbffd84,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -80406,6 +80471,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
       objectReference: {fileID: 301439734}
+    - target: {fileID: 6076419963030285384, guid: c45654d545692f7498fed9b76fbffd84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 731618977}
+    - target: {fileID: 6076419963030285384, guid: c45654d545692f7498fed9b76fbffd84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: resumeGame
+      objectReference: {fileID: 0}
     - target: {fileID: 6076419963321906994, guid: c45654d545692f7498fed9b76fbffd84,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -80436,6 +80511,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
       objectReference: {fileID: 301439734}
+    - target: {fileID: 6076419963321906994, guid: c45654d545692f7498fed9b76fbffd84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 731618977}
+    - target: {fileID: 6076419963321906994, guid: c45654d545692f7498fed9b76fbffd84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: resumeGame
+      objectReference: {fileID: 0}
     - target: {fileID: 6076419963327268714, guid: c45654d545692f7498fed9b76fbffd84,
         type: 3}
       propertyPath: m_Name
