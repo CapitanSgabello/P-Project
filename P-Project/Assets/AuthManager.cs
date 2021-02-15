@@ -52,7 +52,6 @@ public class AuthManager : MonoBehaviour
             RequireBothUsernameAndEmail = false
     };
         PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnRegisterError);
-        UIManager.instance.MenuScreen();
     }
 
     private void OnRegisterError(PlayFabError error)
