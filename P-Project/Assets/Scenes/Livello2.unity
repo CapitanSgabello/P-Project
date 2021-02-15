@@ -29412,6 +29412,21 @@ PrefabInstance:
       propertyPath: m_Value
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 1755657345294770407, guid: 7d63184b5e5fdab4ebfa9d133f1e316d,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1233247731}
+    - target: {fileID: 1755657345294770407, guid: 7d63184b5e5fdab4ebfa9d133f1e316d,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ApplySensitivity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755657345294770407, guid: 7d63184b5e5fdab4ebfa9d133f1e316d,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1755657345618097069, guid: 7d63184b5e5fdab4ebfa9d133f1e316d,
         type: 3}
       propertyPath: m_AnchorMin.x
