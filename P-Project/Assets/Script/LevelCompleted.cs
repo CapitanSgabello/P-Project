@@ -7,10 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelCompleted : MonoBehaviour
 {
-    void Update()
-    {
-
-    }
     public void saveLevelCompleted()
     {
         var request = new UpdateUserDataRequest
@@ -18,6 +14,19 @@ public class LevelCompleted : MonoBehaviour
             Data = new Dictionary<string, string>
             {
                 {"level 1","completed"}
+            }
+        };
+
+        PlayFabClientAPI.UpdateUserData(request, OnDataSent, onError);
+    }
+
+    public void saveLevelCompleted2()
+    {
+        var request = new UpdateUserDataRequest
+        {
+            Data = new Dictionary<string, string>
+            {
+                {"level 2","completed"}
             }
         };
 
@@ -35,8 +44,17 @@ public class LevelCompleted : MonoBehaviour
 
     public void OnTriggerEnter(Collider levelCompleted)
     {
-        saveLevelCompleted();
-        StartCoroutine(ChangeToScene("Livello2"));
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Livello1"))
+        {
+            saveLevelCompleted();
+            StartCoroutine(ChangeToScene("Livello2"));
+        }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Livello2"))
+        {
+            saveLevelCompleted2();
+            StartCoroutine(ChangeToScene("MAIN MENU"));
+        }
+
     }
 
     public IEnumerator ChangeToScene(string sceneToChangeTo)

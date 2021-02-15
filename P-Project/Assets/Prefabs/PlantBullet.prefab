@@ -64,7 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletRB: {fileID: 5315358285666829361}
   damageAmount: 5
-  speed: 5
+  speed: 20
   timetoLive: 12
 --- !u!136 &1322465297490074484
 CapsuleCollider:
