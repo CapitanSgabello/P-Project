@@ -2326,8 +2326,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 7}
-  m_SizeDelta: {x: 271.38464, y: 193.29767}
+  m_AnchoredPosition: {x: 0, y: 3.5}
+  m_SizeDelta: {x: 546.6554, y: 200.29767}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &817485644
 MonoBehaviour:
@@ -2434,7 +2434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &848068827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3584,7 +3584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1274827062
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5352,8 +5352,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.85, y: 0}
-  m_SizeDelta: {x: 17.709564, y: 0}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1926875179
 MonoBehaviour:
@@ -5387,7 +5387,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: " THANKS TO:\n -Francesco\n -Marco\n -Lorenzo\n -Cesare"
+  m_Text: " DEVELOPED BY:\n -Cesare Santini\n -Francesco Stefanelli\n -Marco D'Albis\n
+    -Lorenzo Stancato"
 --- !u!222 &1926875180
 CanvasRenderer:
   m_ObjectHideFlags: 0
