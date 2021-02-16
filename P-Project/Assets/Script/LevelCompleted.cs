@@ -52,7 +52,7 @@ public class LevelCompleted : MonoBehaviour
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Livello2"))
         {
             saveLevelCompleted2();
-            StartCoroutine(ChangeToScene("MAIN MENU"));
+            StartCoroutine(ChangeToScene("ThanksForPlaying"));
         }
 
     }
