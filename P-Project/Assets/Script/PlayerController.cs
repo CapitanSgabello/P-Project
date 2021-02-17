@@ -221,14 +221,14 @@ public class PlayerController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            //currentHealth = 0;
+            currentHealth = 0;
             deadScreen.SetActive(true);
             hasDied = true;
             
         }
         if(currentHealth == 0)
         {
-            AudioController.instance.PlayPlayerHurt();
+            //AudioController.instance.PlayPlayerHurt();
             AudioController.instance.PlayDeathScreen();
             background.Stop();
            
