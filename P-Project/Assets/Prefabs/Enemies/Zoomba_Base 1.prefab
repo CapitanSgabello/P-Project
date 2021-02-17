@@ -241,7 +241,7 @@ MonoBehaviour:
   moveSpeed: 2
   speed: 0.65
   damageAmount: 1
-  fireRate: 0.75
+  fireRate: 0.9
   shouldShoot: 0
   shouldHit: 0
   normal: 1
