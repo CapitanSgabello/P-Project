@@ -15,7 +15,6 @@ public class PlantBullet : MonoBehaviour
     {
         direction = PlayerController.instance.hitPoint.position - transform.position;
         direction = direction * speed;
-        if (!(PlayerController.instance.hasDied))
         AudioController.instance.PlayEnemyShot();
     }
 
