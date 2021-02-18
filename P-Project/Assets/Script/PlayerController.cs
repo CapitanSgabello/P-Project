@@ -56,7 +56,9 @@ public class PlayerController : MonoBehaviour
     public Transform hitPoint;
 
     public AudioSource background;
-    
+    public AudioSource playerHurt;
+    private bool alreadyPlayed = false;
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -228,9 +230,15 @@ public class PlayerController : MonoBehaviour
         }
         if(currentHealth == 0)
         {
-            //AudioController.instance.PlayPlayerHurt();
-            AudioController.instance.PlayDeathScreen();
-            background.Stop();
+
+            if (!alreadyPlayed)
+            {
+
+                AudioController.instance.PlayPlayerHurt();
+                alreadyPlayed = true;
+                AudioController.instance.PlayDeathScreen();
+                background.Stop();
+            }
            
         }
             }

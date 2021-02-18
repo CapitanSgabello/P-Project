@@ -32186,6 +32186,7 @@ MonoBehaviour:
   hasDied: 0
   hitPoint: {fileID: 1664660372}
   background: {fileID: 693792043}
+  playerHurt: {fileID: 950495620}
 --- !u!143 &731618978
 CharacterController:
   m_ObjectHideFlags: 0
